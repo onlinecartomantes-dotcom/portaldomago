@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100000">
+<meta name="description" content="Quimbanda — trabalhos espirituais e atendimento.">
+<title>QUIMBANDA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #090303;
+  --red: #d71920;
+  --red-light: #ff3939;
+  --gold: #e4bd78;
+  --text: #fff5f5;
+  --muted: #d0baba;
+  --border: #641414;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(ellipse at top, #300707 0%, #100303 45%, #070202 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+/* CAPA */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #090202;
+  border-bottom: 2px solid var(--red);
+  box-shadow: 0 8px 35px #000;
+}
+
+.hero-image {
+  width: 100%;
+  height: clamp(300px, 60vw, 720px);
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #540808, #090202 75%);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-title {
+  text-align: center;
+  padding: 24px 16px 30px;
+  background: linear-gradient(180deg, #180303, #080202);
+}
+
+.hero-title h1 {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--red-light);
+  font-size: clamp(30px, 6vw, 60px);
+  line-height: 1.2;
+  letter-spacing: 4px;
+  text-shadow: 0 0 8px #c90000, 0 0 24px #8b0000;
+}
+
+.hero-line {
+  width: min(260px, 70%);
+  height: 2px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--red), transparent);
+}
+
+/* CONTEÚDO */
+.container {
+  width: min(1300px, 94%);
+  margin: 0 auto;
+  padding: 18px 0 35px;
+}
+
+.section-title {
+  text-align: center;
+  padding: 42px 12px 28px;
+}
+
+.section-title h2 {
+  margin-top: 8px;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(25px, 4vw, 39px);
+  color: #fff0f0;
+  text-shadow: 0 0 15px #b90000;
+}
+
+.section-title .line {
+  width: 85px;
+  height: 3px;
+  margin: 16px auto 0;
+  background: var(--red);
+  box-shadow: 0 0 12px #e00000;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #260909, #100404 75%);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.42);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-light);
+  box-shadow: 0 8px 30px rgba(180,0,0,.18);
+}
+
+.card h3 {
+  color: var(--red-light);
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 21px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.card .desc {
+  color: #e5d4d4;
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 19px;
+  flex-grow: 1;
+}
+
+.price {
+  color: var(--gold);
+  font-size: clamp(23px, 2.4vw, 29px);
+  font-weight: 700;
+  margin: 0 0 15px;
+  text-shadow: 0 0 12px #9d000044;
+}
+
+.price-label {
+  color: #bca7a7;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+}
+
+.card-bottom {
+  border-top: 1px solid #4b1515;
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+/* BOTÕES */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px 12px;
+  border-radius: 7px;
+  border: 1px solid #fa3535;
+  background: linear-gradient(135deg, #a80000, #e31b23 55%, #850000);
+  box-shadow: 0 4px 14px #76000035;
+  transition: .2s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #d50000, #ff3030, #a60000);
+  box-shadow: 0 0 18px #e0000050;
+  transform: translateY(-1px);
+}
+
+.btn:active { transform: scale(.98); }
+
+/* INFORMAÇÕES */
+.info {
+  margin-top: 35px;
+  padding: clamp(22px, 4vw, 36px);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #240707, #100303);
+  border: 1px solid #6a1717;
+  box-shadow: 0 8px 25px #0005;
+}
+
+.info h2 {
+  font-family: 'Cinzel', Georgia, serif;
+  text-align: center;
+  font-size: clamp(23px, 3.5vw, 30px);
+  color: var(--red-light);
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #e5d4d4;
+}
+
+.highlight {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 12px 18px;
+  color: #c9aaaa;
+  font-size: 13px;
+  border-top: 1px solid #3d1010;
+  margin-top: 30px;
+}
+
+/* TABLETS */
+@media (max-width: 950px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+  .card { padding: 19px; }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  .container {
+    width: 92%;
+    padding-top: 10px;
+  }
+
+  .hero-image { height: 340px; }
+  .hero-image img { object-position: center 35%; }
+  .hero-title { padding: 20px 12px 24px; }
+
+  .hero-title h1 {
+    letter-spacing: 2px;
+  }
+
+  .section-title { padding: 32px 8px 22px; }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .card h3 { font-size: 21px; }
+  .card .desc { font-size: 14px; }
+  .price { font-size: 26px; }
+  .btn { font-size: 13px; padding: 14px 10px; }
+  .info { padding: 20px; }
+  .info p { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CAPA QUIMBANDA -->
+<header class="hero">
+  <div class="hero-image">
+    <img
+      src="https://i.ibb.co/C38P4fBm/Ritual-de-Quimbanda-em-Chamas.png"
+      alt="Exu e Pomba Gira em uma arte de Quimbanda em vermelho e preto"
+      fetchpriority="high"
+      onerror="this.style.display='none'; this.parentElement.style.background='radial-gradient(ellipse at center, #650b0b, #090202 75%)';">
+  </div>
+
+  <div class="hero-title">
+    <h1>QUIMBANDA</h1>
+    <div class="hero-line"></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section-title">
+    <h2>Nossos Trabalhos</h2>
+    <div class="line"></div>
+  </section>
+
+  <section class="grid" id="trabalhos"></section>
+
+  <section class="info">
+    <h2>Informações Importantes</h2>
+    <p>
+      Para consultar a disponibilidade de um trabalho, entre em contato pelo WhatsApp.<br><br>
+
+      Todos os atendimentos são combinados diretamente, com
+      <span class="highlight">privacidade e discrição</span>.<br><br>
+
+      Envie sua mensagem para receber informações sobre o procedimento,
+      os requisitos e as condições do atendimento.<br><br>
+
+      Cada situação é particular. Não é possível garantir resultados ou prazos específicos.
+    </p>
+  </section>
+
+  <footer>
+    Formas de pagamento: Pix, cartão de crédito e depósito bancário.
+  </footer>
+
+</main>
+
+<script>
+const whatsappNumber = "5585986966786";
+
+const trabalhos = [
+  {
+    nome: "Amarração Amorosa",
+    descricao: "Trabalho espiritual tradicionalmente procurado por quem deseja refletir sobre a união, a atração e a reconciliação amorosa.",
+    valor: "R$ 487,00"
+  },
+  {
+    nome: "Dominação / Submissão",
+    descricao: "Consulta sobre práticas espirituais tradicionais ligadas a relacionamentos, desejos e questões afetivas.",
+    valor: "R$ 587,00"
+  },
+  {
+    nome: "Arrasto Amoroso",
+    descricao: "Trabalho tradicionalmente associado à saudade, à aproximação e à possibilidade de reconciliação.",
+    valor: "R$ 637,00"
+  },
+  {
+    nome: "Adóçamento Amoroso",
+    descricao: "Trabalho espiritual associado simbolicamente à harmonia, ao carinho e à tranquilidade nas relações.",
+    valor: "R$ 387,00"
+  },
+  {
+    nome: "Quebra de Orgulho",
+    descricao: "Consulta voltada a questões de orgulho, resistência emocional, diálogo e aproximação.",
+    valor: "R$ 427,00"
+  },
+  {
+    nome: "Chora nos Meus Pés",
+    descricao: "Trabalho tradicionalmente associado ao arrependimento, à saudade e aos desejos de reconciliação.",
+    valor: "R$ 337,00"
+  },
+  {
+    nome: "Brochamento Sexual",
+    descricao: "Consulta sobre práticas espirituais relacionadas a desejos, intimidade e questões de relacionamento.",
+    valor: "R$ 287,00"
+  },
+  {
+    nome: "Abertura de Caminhos no Amor",
+    descricao: "Trabalho simbólico de abertura de caminhos para novas possibilidades afetivas e desenvolvimento pessoal.",
+    valor: "R$ 387,00"
+  },
+  {
+    nome: "Trabalho Amoroso Completo",
+    descricao: "Consulta sobre um pacote de trabalhos espirituais relacionados à união, à atração e à harmonia amorosa.",
+    valor: "R$ 1.387,00"
+  },
+  {
+    nome: "Destruição Total",
+    descricao: "Atendimento para conversar sobre conflitos, proteção espiritual simbólica e formas de lidar com situações difíceis.",
+    valor: "R$ 777,00"
+  },
+  {
+    nome: "Separação Total",
+    descricao: "Consulta espiritual relacionada a afastamentos, encerramento de ciclos e situações de relacionamento.",
+    valor: "R$ 587,00"
+  },
+  {
+    nome: "Afastamento de Rival",
+    descricao: "Trabalho tradicionalmente associado à proteção do espaço pessoal e à busca por tranquilidade em relações conflituosas.",
+    valor: "R$ 537,00"
+  },
+  {
+    nome: "Tranca de Caminhos Total",
+    descricao: "Consulta sobre tradições espirituais, proteção simbólica e questões que parecem estar impedindo o progresso pessoal.",
+    valor: "R$ 637,00"
+  },
+  {
+    nome: "Abertura de Caminhos Financeiro",
+    descricao: "Trabalho espiritual simbólico relacionado à prosperidade, às oportunidades profissionais e à organização financeira.",
+    valor: "R$ 337,00"
+  },
+  {
+    nome: "Limpeza e Fortificação Espiritual",
+    descricao: "Consulta sobre práticas tradicionais de limpeza espiritual, proteção simbólica e equilíbrio pessoal.",
+    valor: "R$ 487,00"
+  },
+  {
+    nome: "Quebra de Magia ou Maldição",
+    descricao: "Atendimento para conversar sobre crenças espirituais, proteção simbólica e práticas tradicionais de limpeza.",
+    valor: "R$ 457,00"
+  },
+  {
+    nome: "Oferendas para Entidades",
+    descricao: "Informações sobre oferendas e práticas tradicionais, com orientações específicas conforme a consulta.",
+    valor: "R$ 637,00"
+  }
+];
+
+function montarMensagem(trabalho) {
+  return [
+    "Olá! Gostaria de informações sobre este trabalho espiritual.",
+    "",
+    "Trabalho: " + trabalho.nome,
+    "Descrição: " + trabalho.descricao,
+    "Valor informado: " + trabalho.valor,
+    "",
+    "Gostaria de saber como funciona o atendimento e quais são as condições."
+  ].join("\n");
+}
+
+function criarCard(trabalho) {
+  const card = document.createElement("article");
+  card.className = "card";
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = trabalho.nome;
+
+  const descricao = document.createElement("p");
+  descricao.className = "desc";
+  descricao.textContent = trabalho.descricao;
+
+  const parteInferior = document.createElement("div");
+  parteInferior.className = "card-bottom";
+
+  const rotulo = document.createElement("div");
+  rotulo.className = "price-label";
+  rotulo.textContent = "Valor do trabalho";
+
+  const preco = document.createElement("div");
+  preco.className = "price";
+  preco.textContent = trabalho.valor;
+
+  const botao = document.createElement("a");
+  botao.className = "btn";
+  botao.textContent = "CONSULTAR PELO WHATSAPP";
+  botao.target = "_blank";
+  botao.rel = "noopener noreferrer";
+  botao.href =
+    "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(montarMensagem(trabalho));
+
+  parteInferior.append(rotulo, preco, botao);
+  card.append(titulo, descricao, parteInferior);
+
+  return card;
+}
+
+const grade = document.getElementById("trabalhos");
+
+trabalhos.forEach(trabalho => {
+  grade.appendChild(criarCard(trabalho));
+});
+</script>
+
+</body>
+</html>
