@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100719">
+<meta name="description" content="Portal do Mago - consultas e serviços espirituais.">
+<title>Portal do Mago</title>
+
+<style>
+:root {
+    --fundo: #100719;
+    --roxo: #21102f;
+    --dourado: #ffd447;
+    --dourado-claro: #fff0a6;
+    --texto: #f8edff;
+    --verde: #35e878;
+    --cinza: #a5a1ad;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at top right, #321442, transparent 42%),
+        var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    min-width: 280px;
+}
+
+/* CABEÇALHO CENTRALIZADO */
+
+header {
+    padding: 22px 15px;
+    background: #0a0410;
+    border-bottom: 1px solid rgba(255,212,71,.4);
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    color: var(--dourado);
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 0 0 22px rgba(255,212,71,.18);
+}
+
+/* ÁREA PRINCIPAL */
+
+.principal {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 25px;
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.apresentacao {
+    width: 100%;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--dourado-claro);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.titulo-principal {
+    color: var(--dourado);
+    font-size: clamp(42px, 5.5vw, 70px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow:
+        0 0 18px rgba(255,212,71,.15),
+        0 3px 0 #6e4300;
+}
+
+.linha-dourada {
+    width: 90px;
+    height: 4px;
+    margin: 22px auto;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #b47a12, #fff0a6, #d79b18);
+}
+
+/* CARTÃO DE CONSULTA */
+
+.consulta-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 25px auto 0;
+    padding: 27px 24px;
+    text-align: center;
+    border: 1px solid rgba(255,212,71,.6);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #261133, #110719);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.3),
+        inset 0 0 25px rgba(255,212,71,.025);
+}
+
+.consulta-card h2 {
+    color: var(--dourado);
+    font-size: clamp(20px, 2.5vw, 27px);
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.preco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 7px;
+    margin: 0 auto 18px;
+    color: var(--dourado-claro);
+}
+
+.preco strong {
+    font-size: clamp(29px, 4vw, 38px);
+    line-height: 1.2;
+    font-weight: 900;
+    text-shadow: 0 0 12px rgba(255,212,71,.15);
+}
+
+.preco small {
+    font-size: 15px;
+    color: #e0d3e8;
+}
+
+/* STATUS CENTRALIZADO */
+
+.status-linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 22px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.status-bola {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    border-radius: 50%;
+    background: var(--cinza);
+}
+
+.status-bola.online {
+    background: var(--verde);
+    box-shadow:
+        0 0 0 4px rgba(53,232,120,.12),
+        0 0 15px rgba(53,232,120,.8);
+    animation: piscar 1.2s infinite;
+}
+
+.status-bola.ocupado {
+    background: var(--cinza);
+    box-shadow: 0 0 0 4px rgba(165,161,173,.1);
+    animation: none;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .35; }
+}
+
+/* BOTÃO DE CONSULTA */
+
+.botao-consultar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 18px;
+    border: 1px solid #ffe789;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffe789, #e5a91b);
+    color: #1a0b20;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(229,169,27,.12);
+    transition: filter .2s, transform .2s;
+}
+
+.botao-consultar:hover:not(.desativado) {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.botao-consultar.desativado {
+    background: #504a57;
+    border-color: #625b68;
+    color: #d0cbd5;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* FOTO DO MAGO */
+
+.foto-moldura {
+    width: 100%;
+    max-width: 440px;
+    justify-self: center;
+    padding: 10px;
+    border: 1px solid rgba(255,212,71,.7);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #291238, #100719);
+    box-shadow: 0 15px 45px rgba(0,0,0,.5);
+}
+
+.foto-mago {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* SERVIÇOS */
+
+.servicos {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 25px 70px;
+}
+
+.cabecalho-servicos {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.cabecalho-servicos .subtitulo {
+    margin-bottom: 10px;
+}
+
+.cabecalho-servicos h2 {
+    color: var(--dourado);
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.2;
+}
+
+.cabecalho-servicos p:last-child {
+    margin-top: 10px;
+    color: #d9cce3;
+}
+
+/* BANNERS PADRONIZADOS */
+
+.grade-banners {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.banner {
+    width: 100%;
+    height: 420px;
+    min-width: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #261133, #170a20);
+    border: 1px solid rgba(255,212,71,.45);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #0005;
+    overflow: hidden;
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.banner:hover {
+    border-color: var(--dourado);
+    box-shadow: 0 10px 30px #0009;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 6px;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    color: #c7b7d3;
+    font-size: 14px;
+    background: #0a0410;
+    border-top: 1px solid rgba(255,212,71,.3);
+}
+
+footer strong {
+    color: var(--dourado);
+}
+
+/* TABLETS */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+    .principal {
+        gap: 25px;
+        padding: 45px 20px;
+    }
+
+    .banner {
+        height: 360px;
+    }
+
+    .servicos {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 12px;
+    }
+
+    .logo {
+        font-size: clamp(23px, 6vw, 32px);
+        letter-spacing: 2px;
+    }
+
+    .principal {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 38px 18px 45px;
+    }
+
+    .apresentacao {
+        max-width: 540px;
+        margin: auto;
+    }
+
+    .titulo-principal {
+        font-size: clamp(42px, 10vw, 64px);
+    }
+
+    .subtitulo {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .consulta-card {
+        padding: 24px 18px;
+        margin-top: 22px;
+    }
+
+    .foto-moldura {
+        width: min(88%, 360px);
+    }
+
+    .servicos {
+        padding: 20px 12px 45px;
+    }
+
+    .grade-banners {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .banner {
+        height: 300px;
+        padding: 6px;
+        border-radius: 8px;
+    }
+}
+
+/* CELULARES ESTREITOS */
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .principal {
+        padding: 30px 12px 35px;
+    }
+
+    .titulo-principal {
+        font-size: 41px;
+    }
+
+    .consulta-card {
+        padding: 20px 13px;
+    }
+
+    .consulta-card h2 {
+        font-size: 20px;
+    }
+
+    .preco strong {
+        font-size: 30px;
+    }
+
+    .preco small {
+        font-size: 13px;
+    }
+
+    .grade-banners {
+        gap: 8px;
+    }
+
+    .banner {
+        height: 255px;
+        padding: 4px;
+    }
+
+    .servicos {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="#" aria-label="Portal do Mago - início">
+        PORTAL DO MAGO
+    </a>
+</header>
+
+<main>
+
+<section class="principal">
+
+    <div class="apresentacao">
+
+        <p class="subtitulo">
+            Atendimento espiritual online
+        </p>
+
+        <h1 class="titulo-principal">
+            CONSULTE<br>O MAGO
+        </h1>
+
+        <div class="linha-dourada"></div>
+
+        <div class="consulta-card">
+
+            <h2>Consulte agora pelo chat</h2>
+
+            <p class="preco">
+                <strong>R$ 3,99</strong>
+                <small>por minuto</small>
+            </p>
+
+            <div class="status-linha" aria-live="polite">
+                <span
+                    id="status-bola"
+                    class="status-bola ocupado"
+                    aria-hidden="true">
+                </span>
+
+                <span id="status-texto">OCUPADO</span>
+            </div>
+
+            <a
+                id="botao-consultar"
+                class="botao-consultar desativado"
+                href="#"
+                aria-disabled="true"
+                tabindex="-1">
+                OCUPADO
+            </a>
+
+        </div>
+    </div>
+
+    <div class="foto-moldura">
+        <img
+            class="foto-mago"
+            src="https://i.ibb.co/wrzFKzPW/Mago-Cerimonial-com-Cajado-Dourado.png"
+            alt="Mago cerimonial com cajado dourado"
+            fetchpriority="high">
+    </div>
+
+</section>
+
+<section class="servicos" id="servicos">
+
+    <div class="cabecalho-servicos">
+        <p class="subtitulo">Conhecimento • Mistério • Espiritualidade</p>
+        <h2>NOSSOS SERVIÇOS</h2>
+        <p>Escolha a área que deseja conhecer.</p>
+    </div>
+
+    <div class="grade-banners">
+
+        <a class="banner" href="#servicos" aria-label="Angeologia">
+            <img
+                src="https://i.ibb.co/B2zFQrN8/angeologia.jpg"
+                alt="Angeologia"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Goetia e Demonologia">
+            <img
+                src="https://i.ibb.co/7dVnxgdL/goetia.jpg"
+                alt="Goetia e Demonologia"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Quimbanda">
+            <img
+                src="https://i.ibb.co/GvN7m32J/quimbanda.jpg"
+                alt="Quimbanda"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Bruxaria">
+            <img
+                src="https://i.ibb.co/Kx4kw30B/bruxaria.jpg"
+                alt="Bruxaria"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Tarot e Oráculos">
+            <img
+                src="https://i.ibb.co/HfxTxCcr/oraculos.jpg"
+                alt="Tarot e Oráculos"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Talismãs e Amuletos">
+            <img
+                src="https://i.ibb.co/V0NN8tTg/amuletos.jpg"
+                alt="Talismãs e Amuletos"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Umbanda">
+            <img
+                src="https://i.ibb.co/rRwym7cN/umbanda.jpg"
+                alt="Umbanda"
+                loading="lazy">
+        </a>
+
+        <a class="banner" href="#servicos" aria-label="Magia Popular">
+            <img
+                src="https://i.ibb.co/LhZX249k/magia-popular.jpg"
+                alt="Magia Popular"
+                loading="lazy">
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <strong>PORTAL DO MAGO</strong>
+    <p>Todos os direitos reservados.</p>
+</footer>
+
+<script>
+/*
+  HORÁRIO DE BRASÍLIA:
+  Todos os dias, das 13h às 22h.
+
+  DEMONSTRAÇÃO:
+  Cada ciclo dura 2 minutos:
+  90 segundos disponível e 30 segundos ocupado.
+
+  Para abrir o chat real, informe a URL em CHAT_URL.
+  Para disponibilidade real, conecte a um sistema de atendimento.
+*/
+
+const CHAT_URL = ""; // COLOQUE AQUI O LINK REAL DO CHAT
+
+const statusBola = document.getElementById("status-bola");
+const statusTexto = document.getElementById("status-texto");
+const botaoConsultar = document.getElementById("botao-consultar");
+
+const FUSO = "America/Sao_Paulo";
+const CICLO_MS = 2 * 60 * 1000;
+const TEMPO_OCUPADO_MS = 30 * 1000;
+
+function horaBrasilia() {
+    const partes = new Intl.DateTimeFormat("en-GB", {
+        timeZone: FUSO,
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const hora = Number(
+        partes.find(parte => parte.type === "hour").value
+    );
+
+    const minuto = Number(
+        partes.find(parte => parte.type === "minute").value
+    );
+
+    return hora * 60 + minuto;
+}
+
+function dentroDoHorario() {
+    const minutos = horaBrasilia();
+    return minutos >= 13 * 60 && minutos < 22 * 60;
+}
+
+function definirStatus(online, mensagem) {
+    statusBola.classList.toggle("online", online);
+    statusBola.classList.toggle("ocupado", !online);
+    statusTexto.textContent = mensagem;
+
+    botaoConsultar.classList.toggle("desativado", !online);
+    botaoConsultar.setAttribute("aria-disabled", String(!online));
+    botaoConsultar.tabIndex = online ? 0 : -1;
+
+    if (online) {
+        botaoConsultar.textContent = "CONSULTAR AGORA";
+        botaoConsultar.href = CHAT_URL.trim() || "#";
+    } else {
+        botaoConsultar.textContent = "OCUPADO";
+        botaoConsultar.href = "#";
+    }
+}
+
+function atualizarDisponibilidade() {
+    if (!dentroDoHorario()) {
+        definirStatus(false, "OCUPADO");
+        return;
+    }
+
+    const tempoNoCiclo = Date.now() % CICLO_MS;
+    const online = tempoNoCiclo < (CICLO_MS - TEMPO_OCUPADO_MS);
+
+    if (online) {
+        definirStatus(true, "ONLINE");
+    } else {
+        definirStatus(false, "OCUPADO");
+    }
+}
+
+botaoConsultar.addEventListener("click", function(event) {
+    if (botaoConsultar.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+        return;
+    }
+
+    if (!CHAT_URL.trim()) {
+        event.preventDefault();
+        alert("O link do chat ainda precisa ser configurado.");
+    }
+});
+
+atualizarDisponibilidade();
+setInterval(atualizarDisponibilidade, 1000);
+</script>
+
+</body>
+</html>
