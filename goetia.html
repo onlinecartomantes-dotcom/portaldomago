@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Goetia e Demonologia — grimórios e tradição goética.">
+<title>Goetia e Demonologia</title>
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #090909;
+  --red: #c51c32;
+  --gold: #e1c28a;
+  --text: #f8f2f2;
+  --muted: #c0b3b5;
+  --border: #482027;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* CAPA */
+.hero {
+  text-align: center;
+  padding-bottom: 28px;
+  background: #090909;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-cover {
+  width: 100%;
+  height: clamp(260px, 52vw, 650px);
+  overflow: hidden;
+  background: #090909;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 43%;
+}
+
+.hero h1 {
+  margin: 22px auto 0;
+  padding: 0 16px;
+  max-width: 1000px;
+  font: bold clamp(32px, 5vw, 58px)/1.1 Georgia, serif;
+  color: var(--gold);
+  text-shadow: 0 0 25px #d31d3633;
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* CONTEÚDO */
+main {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+.section-head {
+  text-align: center;
+  padding: 54px 0 20px;
+}
+
+.section-head h2 {
+  margin: 8px 0;
+  font: bold clamp(28px, 4vw, 40px) Georgia, serif;
+}
+
+.rule {
+  width: 65px;
+  height: 2px;
+  background: var(--red);
+  margin: 20px auto;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  padding: 12px 0 65px;
+}
+
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a1415, #0e0d0d 78%);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  box-shadow: 0 10px 30px #0005;
+  transition: transform .25s, border-color .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #873040;
+}
+
+.card-media {
+  height: 245px;
+  background: radial-gradient(ellipse, #50111b, #110b0c 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1) sepia(.2) saturate(2) hue-rotate(300deg);
+}
+
+.art-fallback {
+  font: 65px Georgia, serif;
+  color: var(--gold);
+}
+
+.card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.card h3 {
+  font: bold 27px Georgia, serif;
+  margin: 8px 0 12px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #d1c5c6;
+  margin: 0 0 14px;
+}
+
+.card h4 {
+  font-size: 13px;
+  color: white;
+  margin: 7px 0;
+}
+
+.card ul {
+  padding-left: 18px;
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: #c9babb;
+}
+
+.card li {
+  margin: 5px 0;
+}
+
+/* PREÇOS E BOTÕES */
+.price-box {
+  border-top: 1px solid #382126;
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.price-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.price {
+  color: var(--gold);
+  font: bold clamp(23px, 2.5vw, 29px) Georgia, serif;
+  margin: 4px 0 16px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: background .2s, transform .2s;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-red {
+  background: var(--red);
+  color: white;
+}
+
+.btn-red:hover {
+  background: #ed263e;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.price-box .btn {
+  width: 100%;
+}
+
+/* OUTROS PACTOS */
+.custom {
+  margin: 0 0 60px;
+  padding: clamp(24px, 5vw, 48px);
+  text-align: center;
+  border: 1px solid #762331;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at top, #3a0d14, #110c0d 70%);
+}
+
+.custom h2 {
+  font: bold clamp(27px, 4vw, 39px) Georgia, serif;
+}
+
+.custom .btn {
+  margin: 5px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 24px;
+  }
+
+  .hero-cover {
+    height: 300px;
+  }
+
+  .hero-cover img {
+    object-position: center center;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-media {
+    height: 260px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .custom .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-cover">
+    <img
+      src="https://i.ibb.co/C5KMWZTM/Le-o-Tr-plice-no-Trono-Oculto.png"
+      alt="Gravura ocultista em estilo de grimório antigo"
+      fetchpriority="high">
+  </div>
+
+  <h1>Goetia e Demonologia</h1>
+</header>
+
+<main>
+
+  <section class="section-head" id="servicos">
+    <span class="kicker">Daemons e pactos</span>
+    <h2>Pactos e Benefícios</h2>
+    <div class="rule"></div>
+  </section>
+
+  <section class="grid" id="lista-daemons">
+    <!-- Os cards são criados pelo JavaScript abaixo. -->
+  </section>
+
+  <section class="custom" id="sob-demanda">
+    <span class="kicker">Atendimento individual</span>
+    <h2>Outros Pactos Sob Demanda</h2>
+
+    <a
+      class="btn btn-red"
+      href="https://wa.me/5585986966786?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20outros%20pactos%20e%20receber%20informa%C3%A7%C3%B5es%20sobre%20as%20op%C3%A7%C3%B5es%20dispon%C3%ADveis."
+      target="_blank"
+      rel="noopener">
+      ✆ CONSULTAR OUTROS PACTOS PELO WHATSAPP
+    </a>
+  </section>
+
+</main>
+
+<script>
+const whatsapp = "5585986966786";
+
+const daemons = [
+  {
+    nome: "Paimon",
+    tag: "Ars Goetia · Nº 9",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/09-paimon-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Paimon",
+    simbolo: "♛",
+    sobre: "Paimon é descrito na tradição goética como um rei ligado às artes, às ciências e ao conhecimento.",
+    pacto: "Pacto tradicionalmente associado à busca por conhecimento, aprendizado, eloquência e desenvolvimento de habilidades. Na tradição esotérica, essas atribuições são relacionadas ao desenvolvimento pessoal e espiritual.",
+    beneficios: [
+      "Conhecimento e aprendizado.",
+      "Comunicação, eloquência e expressão.",
+      "Disciplina, liderança e desenvolvimento de talentos."
+    ],
+    valor: "R$ 1.277,00"
+  },
+  {
+    nome: "Bune",
+    tag: "Ars Goetia · Nº 26",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/26-bune-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Bune",
+    simbolo: "◈",
+    sobre: "Bune é associado nos textos goéticos à riqueza, à sabedoria e à eloquência.",
+    pacto: "Pacto tradicionalmente relacionado à prosperidade material, à administração de recursos e à capacidade de se expressar com clareza. A proposta é direcionada à prosperidade e ao desenvolvimento material.",
+    beneficios: [
+      "Prosperidade e oportunidades materiais.",
+      "Sabedoria para lidar com recursos.",
+      "Eloquência e comunicação."
+    ],
+    valor: "R$ 1.477,00"
+  },
+  {
+    nome: "Belial",
+    tag: "Ars Goetia · Nº 68",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/68-belial-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Belial",
+    simbolo: "♜",
+    sobre: "Belial é associado nas descrições tradicionais a honras, dignidades, posições e autoridade.",
+    pacto: "Pacto tradicionalmente associado à autonomia, à autoridade e à busca por reconhecimento. A proposta é direcionada à autonomia, à autoridade pessoal e ao reconhecimento.",
+    beneficios: [
+      "Autoconfiança e autonomia.",
+      "Liderança e responsabilidade.",
+      "Reconhecimento e avanço profissional."
+    ],
+    valor: "R$ 1.377,00"
+  },
+  {
+    nome: "Astaroth",
+    tag: "Ars Goetia · Nº 29",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/29-astaroth-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Astaroth",
+    simbolo: "✧",
+    sobre: "Astaroth aparece nos grimórios ligado ao conhecimento e a revelações sobre diferentes assuntos.",
+    pacto: "Pacto tradicionalmente relacionado à busca por conhecimento, compreensão de situações e reflexão sobre decisões. As interpretações variam conforme a tradição.",
+    beneficios: [
+      "Busca por conhecimento e sabedoria.",
+      "Reflexão diante de dúvidas e escolhas.",
+      "Compreensão de assuntos complexos."
+    ],
+    valor: "R$ 1.177,00"
+  },
+  {
+    nome: "Asmodeus",
+    tag: "Ars Goetia · Nº 32",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/32-asmodeo-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Asmoday, também conhecido como Asmodeus",
+    simbolo: "☽",
+    sobre: "Chamado Asmoday em algumas edições da Goétia, é uma figura da demonologia tradicional associada a diferentes conhecimentos e habilidades.",
+    pacto: "Pacto tradicionalmente associado a desejo, determinação e domínio das próprias escolhas. As interpretações variam conforme a tradição e a abordagem adotada.",
+    beneficios: [
+      "Determinação e força de vontade.",
+      "Consciência sobre desejos e escolhas.",
+      "Autocontrole e foco em objetivos."
+    ],
+    valor: "R$ 1.277,00"
+  },
+  {
+    nome: "Lilith",
+    tag: "Amor · Feminino · Autonomia",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Sigil_of_Lilith.svg",
+    alt: "Sigilo de Lilith",
+    simbolo: "⚸",
+    sobre: "Figura presente em tradições mitológicas e esotéricas, frequentemente interpretada como símbolo de independência, autonomia, força pessoal e liberdade de escolha.",
+    pacto: "Em algumas correntes esotéricas modernas, Lilith é associada ao amor-próprio, à sensualidade, ao magnetismo pessoal e à coragem de reconhecer os próprios desejos e limites. A proposta é voltada ao empoderamento pessoal e à abertura para relações afetivas mais conscientes e recíprocas.",
+    beneficios: [
+      "Empoderamento, autonomia e autoconfiança.",
+      "Amor-próprio, autoestima e valorização pessoal.",
+      "Sensualidade e magnetismo pessoal.",
+      "Relações afetivas com reciprocidade, respeito e clareza.",
+      "Reconhecimento de desejos, limites e escolhas pessoais."
+    ],
+    valor: "R$ 1.377,00"
+  },
+  {
+    nome: "Bael (Baal)",
+    tag: "Ars Goetia · Nº 1",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/01-bael-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Bael",
+    simbolo: "♛",
+    sobre: "Bael é o primeiro espírito da Ars Goetia; o texto clássico o associa à capacidade de se tornar invisível.",
+    pacto: "Pacto tradicionalmente associado à discrição, à proteção simbólica e à estratégia. A tradição clássica associa Bael à invisibilidade, além de temas de discrição e estratégia.",
+    beneficios: [
+      "Discrição e reserva.",
+      "Estratégia ao lidar com situações delicadas.",
+      "Proteção simbólica e cautela."
+    ],
+    valor: "R$ 1.077,00"
+  },
+  {
+    nome: "Dantalion",
+    tag: "Ars Goetia · Nº 71",
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/71-dantalion-sigilo-ars-goetia.svg",
+    alt: "Sigilo tradicional de Dantalion",
+    simbolo: "✧",
+    sobre: "Dantalion é descrito no grimório em relação às artes e aos pensamentos e emoções das pessoas.",
+    pacto: "Pacto tradicionalmente relacionado à compreensão das emoções, à comunicação e à percepção das relações. Não significa controlar sentimentos ou pensamentos de outra pessoa.",
+    beneficios: [
+      "Comunicação e compreensão interpessoal.",
+      "Reflexão sobre emoções e relações.",
+      "Percepção de diferentes perspectivas."
+    ],
+    valor: "R$ 1.177,00"
+  }
+];
+
+function criarMensagem(daemon) {
+  return [
+    `Olá! Quero informações sobre o pacto de ${daemon.nome}.`,
+    "",
+    `Sobre o daemon: ${daemon.sobre}`,
+    "",
+    `Pacto e benefícios atribuídos: ${daemon.pacto}`,
+    "",
+    "Benefícios:",
+    ...daemon.beneficios.map(item => `• ${item}`),
+    "",
+    `Valor do pacto: ${daemon.valor}`,
+    "",
+    "Gostaria de receber mais informações sobre como funciona."
+  ].join("\n");
+}
+
+function criarCard(daemon) {
+  const artigo = document.createElement("article");
+  artigo.className = "card";
+
+  const media = document.createElement("div");
+  media.className = "card-media";
+
+  const imagem = document.createElement("img");
+  imagem.src = daemon.imagem;
+  imagem.alt = daemon.alt;
+  imagem.loading = "lazy";
+  imagem.onerror = function() {
+    media.innerHTML = "";
+    const fallback = document.createElement("span");
+    fallback.className = "art-fallback";
+    fallback.textContent = daemon.simbolo;
+    media.appendChild(fallback);
+  };
+
+  media.appendChild(imagem);
+
+  const corpo = document.createElement("div");
+  corpo.className = "card-body";
+
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.textContent = daemon.tag;
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = daemon.nome;
+
+  const sobre = document.createElement("p");
+  const sobreNegrito = document.createElement("strong");
+  sobreNegrito.textContent = "Sobre o daemon: ";
+  sobre.appendChild(sobreNegrito);
+  sobre.appendChild(document.createTextNode(daemon.sobre));
+
+  const subtitulo = document.createElement("h4");
+  subtitulo.textContent = "Pacto e benefícios atribuídos";
+
+  const descricao = document.createElement("p");
+  descricao.textContent = daemon.pacto;
+
+  const lista = document.createElement("ul");
+  daemon.beneficios.forEach(beneficio => {
+    const item = document.createElement("li");
+    item.textContent = beneficio;
+    lista.appendChild(item);
+  });
+
+  const caixaPreco = document.createElement("div");
+  caixaPreco.className = "price-box";
+
+  const rotulo = document.createElement("span");
+  rotulo.className = "price-label";
+  rotulo.textContent = "Valor do pacto";
+
+  const preco = document.createElement("div");
+  preco.className = "price";
+  preco.textContent = daemon.valor;
+
+  const botao = document.createElement("a");
+  botao.className = "btn btn-red";
+  botao.textContent = daemon.nome === "Lilith"
+    ? "CONSULTAR LILITH PELO WHATSAPP"
+    : "CONSULTAR PACTO PELO WHATSAPP";
+
+  botao.href =
+    `https://wa.me/${whatsapp}?text=${encodeURIComponent(criarMensagem(daemon))}`;
+
+  botao.target = "_blank";
+  botao.rel = "noopener";
+
+  caixaPreco.append(rotulo, preco, botao);
+  corpo.append(tag, titulo, sobre, subtitulo, descricao, lista, caixaPreco);
+  artigo.append(media, corpo);
+
+  return artigo;
+}
+
+const grade = document.getElementById("lista-daemons");
+
+daemons.forEach(daemon => {
+  grade.appendChild(criarCard(daemon));
+});
+</script>
+
+</body>
+</html>
