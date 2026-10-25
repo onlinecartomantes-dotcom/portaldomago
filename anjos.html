@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090e20">
+<meta name="description" content="Rituais dos Anjos com Forças Planetárias. Agende pelo WhatsApp.">
+<title>Rituais dos Anjos com Forças Planetárias</title>
+
+<style>
+:root {
+  --bg: #090e20;
+  --card: #121b30;
+  --text: #f8f7f2;
+  --muted: #b7c1d4;
+  --green: #20b875;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 0%, #1d3154, transparent 55%),
+    var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .38;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white 50%, transparent 100%),
+    radial-gradient(1px 1px at 100px 100px, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 180px 60px, #e9d6a6 50%, transparent 100%),
+    radial-gradient(1px 1px at 240px 150px, white 50%, transparent 100%);
+  background-size: 280px 210px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 18px;
+}
+
+/* BANNER DO ANJO */
+
+.banner {
+  width: 100%;
+  height: clamp(220px, 40vw, 440px);
+  overflow: hidden;
+  background: #080e20;
+  border-bottom: 1px solid rgba(239,209,138,.3);
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+/* TÍTULO ABAIXO DO BANNER */
+
+.hero {
+  max-width: 850px;
+  margin: auto;
+  padding: 30px 18px 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #efd18a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 12px auto;
+  font: 500 clamp(29px, 5vw, 46px)/1.15 Georgia, serif;
+  color: #fff;
+  text-wrap: balance;
+}
+
+h1 span {
+  display: block;
+  margin-top: 5px;
+  color: #efd18a;
+}
+
+.subtitle {
+  max-width: 580px;
+  margin: 12px auto 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.price-label {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border: 1px solid #efd18a55;
+  border-radius: 30px;
+  background: #efd18a0c;
+  color: #efd18a;
+  font-size: 13px;
+}
+
+.price-label strong {
+  font-size: 18px;
+}
+
+/* AGENDA */
+
+.section-heading {
+  margin: 22px 0;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font: 500 clamp(24px, 4vw, 32px) Georgia, serif;
+}
+
+.section-heading p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-bottom: 28px;
+}
+
+/* CORES PRÓPRIAS DOS PLANETAS */
+
+.day-card {
+  --planet: #efd18a;
+  --glow: rgba(239,209,138,.12);
+
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--planet) 40%, transparent);
+  border-radius: 17px;
+  background:
+    radial-gradient(ellipse at top right, var(--glow), transparent 65%),
+    linear-gradient(145deg, #17223b, #101729);
+  box-shadow: 0 10px 30px #0003;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.planet-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid color-mix(in srgb, var(--planet) 65%, transparent);
+  border-radius: 15px;
+  background: var(--glow);
+  color: var(--planet);
+  font-size: 29px;
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.day-header p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.content {
+  padding: 17px;
+}
+
+.angel {
+  margin-bottom: 7px;
+  color: var(--planet);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.energy {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--planet) 40%, transparent);
+  border-radius: 30px;
+  background: var(--glow);
+  color: var(--planet);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ritual-title {
+  margin: 0 0 7px;
+  font-size: 15px;
+  font-weight: 750;
+  color: #fff;
+}
+
+.description {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.benefit {
+  margin-bottom: 17px;
+  color: #c4dfd0;
+  font-size: 12px;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff15;
+}
+
+.value {
+  color: var(--planet);
+  font-size: 17px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  min-width: 0;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.whatsapp:hover {
+  background: #16965e;
+}
+
+.whatsapp:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.notice {
+  margin: 0 0 28px;
+  padding: 15px;
+  border: 1px solid #ffffff16;
+  border-radius: 12px;
+  background: #10182b;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.notice strong {
+  color: #efd18a;
+}
+
+footer {
+  padding: 24px 15px;
+  border-top: 1px solid #ffffff16;
+  background: #080d1a;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0 0 8px;
+}
+
+footer a {
+  color: #efd18a;
+  text-decoration: none;
+}
+
+/* COMPUTADOR */
+
+@media (min-width: 1000px) {
+  .days {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* CELULAR E TABLET */
+
+@media (max-width: 699px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .banner {
+    height: clamp(210px, 57vw, 330px);
+  }
+
+  .banner img {
+    object-position: center 35%;
+  }
+
+  .hero {
+    padding: 25px 12px 20px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .days {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .card-bottom {
+    flex-wrap: nowrap;
+  }
+
+  .whatsapp {
+    flex: 1;
+  }
+}
+
+@media (max-width: 350px) {
+  .card-bottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .whatsapp {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- BANNER: IMAGEM DO ANJO -->
+  <div class="banner">
+    <img
+      src="https://i.ibb.co/4k0cnYc/Arcanjo-Celestial-com-Asas-Douradas.png"
+      alt="Anjo celestial com asas douradas e luzes cósmicas"
+      fetchpriority="high"
+      decoding="async"
+    >
+  </div>
+
+  <!-- TÍTULO E VALOR ABAIXO DO BANNER -->
+  <header class="hero">
+    <div class="eyebrow">✧ Espiritualidade • Fé • Tradição ✧</div>
+
+    <h1>
+      Rituais dos Anjos
+      <span>com Forças Planetárias</span>
+    </h1>
+
+    <p class="subtitle">
+      Conheça a energia de cada arcanjo, escolha seu ritual
+      e solicite seu agendamento de forma simples.
+    </p>
+
+    <div class="price-label">
+      <span>Valor por ritual:</span>
+      <strong>R$ 177,00</strong>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="section-heading">
+      <h2>Os Sete Arcanjos</h2>
+      <p>Um dia, um arcanjo e sua principal energia espiritual.</p>
+    </div>
+
+    <section
+      class="days"
+      id="agenda"
+      aria-label="Rituais dos sete arcanjos">
+    </section>
+
+    <aside class="notice">
+      <strong>Nota:</strong>
+      as correspondências entre arcanjos, planetas e cores podem variar
+      conforme a tradição esotérica. Os benefícios descritos são
+      significados espirituais tradicionais, sem garantia de resultados.
+      Confirme a disponibilidade pelo WhatsApp.
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>Rituais dos Anjos com Forças Planetárias</p>
+    <a
+      href="https://wa.me/5585986966786"
+      target="_blank"
+      rel="noopener noreferrer">
+      WhatsApp • (85) 98696-6786
+    </a>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const WHATSAPP = "5585986966786";
+
+    const dias = [
+      {
+        dia: "Domingo",
+        planeta: "Sol",
+        simbolo: "☉",
+        cor: "#f3c969",
+        brilho: "rgba(243,201,105,.14)",
+        anjo: "Miguel",
+        energia: "Proteção, coragem e força",
+        ritual: "Ritual de Proteção Espiritual",
+        descricao: "Prática de oração e intenção dedicada à coragem, à firmeza interior e à proteção espiritual.",
+        beneficio: "Fortalecer a confiança e a determinação."
+      },
+      {
+        dia: "Segunda-feira",
+        planeta: "Lua",
+        simbolo: "☾",
+        cor: "#c9dcff",
+        brilho: "rgba(165,195,255,.15)",
+        anjo: "Gabriel",
+        energia: "Intuição, paz e harmonia",
+        ritual: "Ritual de Paz e Equilíbrio",
+        descricao: "Momento espiritual de serenidade, acolhimento e conexão com os sentimentos.",
+        beneficio: "Cultivar calma e autoconhecimento."
+      },
+      {
+        dia: "Terça-feira",
+        planeta: "Marte",
+        simbolo: "♂",
+        cor: "#ff8585",
+        brilho: "rgba(255,95,95,.14)",
+        anjo: "Samael",
+        energia: "Coragem, ação e determinação",
+        ritual: "Ritual de Coragem e Força",
+        descricao: "Intenção espiritual para enfrentar desafios com firmeza e responsabilidade.",
+        beneficio: "Estimular iniciativa e perseverança."
+      },
+      {
+        dia: "Quarta-feira",
+        planeta: "Mercúrio",
+        simbolo: "☿",
+        cor: "#7fe2bb",
+        brilho: "rgba(90,220,175,.14)",
+        anjo: "Raphael",
+        energia: "Sabedoria, clareza e comunicação",
+        ritual: "Ritual de Clareza e Sabedoria",
+        descricao: "Momento de reflexão para organizar pensamentos e buscar discernimento nas decisões.",
+        beneficio: "Favorecer o foco e a comunicação."
+      },
+      {
+        dia: "Quinta-feira",
+        planeta: "Júpiter",
+        simbolo: "♃",
+        cor: "#c3a4ff",
+        brilho: "rgba(165,120,255,.15)",
+        anjo: "Sachiel",
+        energia: "Prosperidade e expansão",
+        ritual: "Ritual de Prosperidade",
+        descricao: "Intenção espiritual voltada ao crescimento, às oportunidades e à abundância consciente.",
+        beneficio: "Incentivar o planejamento e novas possibilidades."
+      },
+      {
+        dia: "Sexta-feira",
+        planeta: "Vênus",
+        simbolo: "♀",
+        cor: "#ff9ed5",
+        brilho: "rgba(255,120,195,.15)",
+        anjo: "Anael",
+        energia: "Amor, beleza e harmonia",
+        ritual: "Ritual de Amor e Harmonia",
+        descricao: "Prática dedicada ao amor-próprio, ao afeto e aos relacionamentos respeitosos.",
+        beneficio: "Cultivar autoestima e reciprocidade."
+      },
+      {
+        dia: "Sábado",
+        planeta: "Saturno",
+        simbolo: "♄",
+        cor: "#c3ccdb",
+        brilho: "rgba(170,190,220,.13)",
+        anjo: "Cassiel",
+        energia: "Disciplina, sabedoria e ciclos",
+        ritual: "Ritual de Disciplina e Renovação",
+        descricao: "Momento de reflexão para encerrar ciclos, fortalecer limites e organizar novos passos.",
+        beneficio: "Promover prudência e organização."
+      }
+    ];
+
+    function criarLinkWhatsApp(item) {
+      const mensagem =
+        "Olá! Gostaria de agendar o " + item.ritual + "." +
+        "\nDia: " + item.dia +
+        "\nArcanjo: " + item.anjo +
+        "\nPlaneta: " + item.planeta +
+        "\nEnergia: " + item.energia +
+        "\nValor: R$ 177,00" +
+        "\nGostaria de confirmar a disponibilidade.";
+
+      return "https://wa.me/" + WHATSAPP +
+        "?text=" + encodeURIComponent(mensagem);
+    }
+
+    function elemento(tag, classe, texto) {
+      const el = document.createElement(tag);
+
+      if (classe) el.className = classe;
+      if (texto !== undefined) el.textContent = texto;
+
+      return el;
+    }
+
+    function criarCartao(item) {
+      const card = elemento("article", "day-card");
+
+      card.style.setProperty("--planet", item.cor);
+      card.style.setProperty("--glow", item.brilho);
+
+      const header = elemento("div", "day-header");
+      const icon = elemento("div", "planet-icon", item.simbolo);
+      icon.setAttribute("aria-hidden", "true");
+
+      const heading = document.createElement("div");
+      heading.append(
+        elemento("h3", "", item.dia),
+        elemento("p", "", "Planeta: " + item.planeta)
+      );
+
+      header.append(icon, heading);
+
+      const content = elemento("div", "content");
+      const angel = elemento("div", "angel", "Arcanjo " + item.anjo);
+      const energy = elemento("div", "energy", "✧ " + item.energia);
+      const ritual = elemento("h4", "ritual-title", item.ritual);
+      const description = elemento("p", "description", item.descricao);
+      const benefit = elemento(
+        "div",
+        "benefit",
+        "✧ Benefício espiritual: " + item.beneficio
+      );
+
+      const bottom = elemento("div", "card-bottom");
+      const value = elemento("div", "value", "R$ 177,00");
+      const button = elemento("a", "whatsapp", "Agendar pelo WhatsApp");
+
+      button.href = criarLinkWhatsApp(item);
+      button.target = "_blank";
+      button.rel = "noopener noreferrer";
+      button.setAttribute(
+        "aria-label",
+        "Agendar " + item.ritual + " com o arcanjo " + item.anjo
+      );
+
+      bottom.append(value, button);
+      content.append(angel, energy, ritual, description, benefit, bottom);
+      card.append(header, content);
+
+      return card;
+    }
+
+    const agenda = document.getElementById("agenda");
+    const fragment = document.createDocumentFragment();
+
+    dias.forEach(function(item) {
+      fragment.appendChild(criarCartao(item));
+    });
+
+    agenda.appendChild(fragment);
+  </script>
+
+</body>
+</html>
