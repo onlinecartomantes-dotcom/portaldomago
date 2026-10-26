@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eaf8ec">
+<meta name="description" content="Umbanda, Orixás e Oferendas. Conheça os serviços, finalidades e valores.">
+<title>Umbanda, Orixás e Oferendas</title>
+
+<style>
+:root {
+  --bg: #eaf8ec;
+  --text: #183b2a;
+  --muted: #526b5b;
+  --green: #25d366;
+  --line: rgba(28,100,57,.15);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(ellipse at 8% 8%, rgba(81,183,164,.18), transparent 32%),
+              linear-gradient(180deg, #f4fcf4 0%, #e4f5e7 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+.wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+
+.color-ribbon {
+  height: 6px;
+  background: linear-gradient(90deg, #d62828 0 14.28%, #f0c419 14.28% 28.56%, #fff 28.56% 42.84%, #e879b9 42.84% 57.12%, #795548 57.12% 71.4%, #176b37 71.4% 85.68%, #174a8b 85.68% 100%);
+}
+header { padding: 28px 0 12px; text-align: center; }
+
+.cover {
+  display: block;
+  width: min(100%, 760px);
+  max-height: 370px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(35,120,71,.2);
+  box-shadow: 0 16px 42px rgba(28,85,47,.14);
+  background: #d8efdc;
+}
+h1 {
+  margin: 0;
+  color: #226b40;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: .035em;
+  text-wrap: balance;
+}
+.subtitle {
+  max-width: 740px;
+  margin: 15px auto 0;
+  color: var(--muted);
+  font-size: clamp(.98rem, 2vw, 1.08rem);
+}
+.line-mark {
+  width: 90px;
+  height: 4px;
+  margin: 17px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #d62828, #f0c419, #fff, #e879b9, #795548, #176b37, #174a8b);
+}
+.intro { text-align: center; padding: 28px 0 24px; }
+.intro h2 {
+  margin: 0 0 8px;
+  color: #205e38;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1.3;
+}
+.intro p { max-width: 760px; margin: 0 auto; color: var(--muted); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 8px 0 42px;
+}
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(30,92,49,.09);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 15px 32px rgba(30,92,49,.14); }
+.card::before { content: ""; display: block; height: 5px; width: 100%; background: var(--accent); }
+.card-inner { padding: 21px; display: flex; flex-direction: column; flex: 1; }
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--soft);
+  font-weight: 800;
+  font-size: .92rem;
+  margin-bottom: 13px;
+}
+.card h3 {
+  margin: 0 0 12px;
+  color: #214b31;
+  font-size: 1.22rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.label {
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 2px 0 7px;
+}
+.description { color: #405b49; margin: 0; font-size: .96rem; overflow-wrap: anywhere; }
+
+.price-row {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+.price {
+  color: #207343;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.price-note { color: var(--muted); font-size: .75rem; text-align: right; }
+
+.whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 18px;
+  padding: 12px 15px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--green);
+  color: #092b17;
+  text-decoration: none;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.25;
+  transition: transform .18s ease, filter .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.whatsapp:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.whatsapp:focus-visible { outline: 3px solid #216c3d; outline-offset: 3px; }
+.whatsapp svg { width: 20px; height: 20px; flex: 0 0 20px; }
+
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+  .cover { max-height: 330px; }
+}
+@media (max-width: 560px) {
+  .wrap { width: calc(100% - 22px); }
+  header { padding-top: 17px; }
+  .cover { border-radius: 15px; margin-bottom: 18px; max-height: 250px; }
+  .cards { grid-template-columns: 1fr; gap: 13px; padding-bottom: 30px; }
+  .card-inner { padding: 19px; }
+  .card h3 { font-size: 1.18rem; }
+  .intro { padding: 24px 0 20px; }
+  .price { font-size: 1.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+<div class="color-ribbon" aria-hidden="true"></div>
+
+<header class="wrap">
+  <img class="cover"
+    src="https://i.ibb.co/MD1SG9RJ/Captura-de-tela-2026-10-25-235842.png"
+    alt="Capa do site Umbanda, Orixás e Oferendas"
+    fetchpriority="high">
+
+  <h1>UMBANDA, ORIXÁS E OFERENDAS</h1>
+  <p class="subtitle">
+    Conheça as oferendas espirituais, suas finalidades e valores.
+    Escolha a opção desejada e fale diretamente pelo WhatsApp.
+  </p>
+  <div class="line-mark" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+  <section class="intro" aria-labelledby="services-title">
+    <h2 id="services-title">Oferendas Espirituais — Finalidades e Valores</h2>
+    <p>Escolha o serviço desejado e consulte os detalhes pelo WhatsApp.</p>
+  </section>
+  <section class="cards" id="servicos" aria-label="Lista de oferendas"></section>
+</main>
+
+<script>
+"use strict";
+
+const whatsappNumber = "5585986966786";
+
+const whatsappIcon = `
+<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+<path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.94 11.94 0 0 0 5.75 1.47h.01c6.58 0 11.93-5.35 11.93-11.93a11.85 11.85 0 0 0-3.49-8.42ZM12.08 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.98.99-3.63-.24-.37a9.86 9.86 0 0 1-1.52-5.26c0-5.47 4.45-9.92 9.93-9.92a9.86 9.86 0 0 1 7.02 2.91 9.86 9.86 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.92 9.92Zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.07-.8.38-.28.3-1.06 1.03-1.06 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/>
+</svg>`;
+
+const servicos = [
+  {
+    nome: "Exu Masculino",
+    descricao: "Defesa espiritual, quebra de demandas e magia negativa, proteção e abertura de caminhos.",
+    valor: "R$ 357,00", cor: "#c62828", suave: "#fff0f0"
+  },
+  {
+    nome: "Exu Feminino",
+    descricao: "Abertura de caminhos, empoderamento, força pessoal, proteção e valorização própria.",
+    valor: "R$ 487,00", cor: "#c49a00", suave: "#fff9df"
+  },
+  {
+    nome: "Exu e Pombagira",
+    descricao: "União, amor, prosperidade, defesa espiritual, proteção, abertura de caminhos e quebra de feitiços.",
+    valor: "R$ 737,00", cor: "#a33b35", suave: "#fff0e9",
+    fundo: "#201a1a", texto: "#fff8f4"
+  },
+  {
+    nome: "Pretos-Velhos, Omolu e Nanã Buruquê",
+    descricao: "Cura espiritual, limpeza, proteção, fortalecimento e renovação das energias.",
+    valor: "R$ 387,00", cor: "#333333", suave: "#f1f1f1"
+  },
+  {
+    nome: "Xangô",
+    descricao: "Justiça, equilíbrio e fortalecimento espiritual diante de problemas e demandas judiciais.",
+    valor: "R$ 487,00", cor: "#795548", suave: "#f4e9e2"
+  },
+  {
+    nome: "Oxum",
+    descricao: "Fertilidade, cuidado, proteção, amor-próprio, harmonia afetiva e acolhimento.",
+    valor: "R$ 437,00", cor: "#d6a800", suave: "#fff8d9"
+  },
+  {
+    nome: "Iansã",
+    descricao: "Justiça, proteção, limpeza espiritual, coragem e renovação.",
+    valor: "R$ 487,00", cor: "#d62828", suave: "#fff0f0"
+  },
+  {
+    nome: "Oxóssi",
+    descricao: "Saúde, abertura de caminhos, fartura, abundância e prosperidade.",
+    valor: "R$ 487,00", cor: "#176b37", suave: "#e8f7eb"
+  },
+  {
+    nome: "Ogum",
+    descricao: "Abertura de caminhos, proteção, coragem e força para enfrentar lutas, obstáculos e demandas.",
+    valor: "R$ 387,00", cor: "#123f83", suave: "#eaf1ff"
+  },
+  {
+    nome: "Iemanjá e Oxalá",
+    descricao: "Equilíbrio emocional e espiritual, proteção familiar, paz, saúde, prosperidade e harmonização de situações familiares e amorosas.",
+    valor: "R$ 587,00", cor: "#2878bd", suave: "#edf7ff"
+  },
+  {
+    nome: "Erês",
+    descricao: "Proteção, alegria, saúde, prosperidade, leveza e fortalecimento espiritual.",
+    valor: "R$ 287,00", cor: "#df78b0", suave: "#fff0f8"
+  }
+];
+
+const cards = document.getElementById("servicos");
+
+function criarCard(servico, indice) {
+  const mensagem = [
+    "Olá! Tenho interesse na oferenda espiritual:",
+    "Serviço: " + servico.nome,
+    "Finalidades: " + servico.descricao,
+    "Valor: " + servico.valor,
+    "Gostaria de receber mais informações, por favor."
+  ].join("\n");
+
+  const link = "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(mensagem);
+
+  const article = document.createElement("article");
+  article.className = "card";
+  article.style.setProperty("--accent", servico.cor);
+  article.style.setProperty("--soft", servico.suave);
+
+  if (servico.fundo) article.style.background = servico.fundo;
+
+  const inner = document.createElement("div");
+  inner.className = "card-inner";
+
+  const number = document.createElement("div");
+  number.className = "number";
+  number.setAttribute("aria-hidden", "true");
+  number.textContent = String(indice + 1).padStart(2, "0");
+
+  const title = document.createElement("h3");
+  title.textContent = servico.nome;
+  if (servico.texto) title.style.color = servico.texto;
+
+  const label = document.createElement("div");
+  label.className = "label";
+  label.textContent = "Finalidades espirituais";
+
+  const description = document.createElement("p");
+  description.className = "description";
+  description.textContent = servico.descricao;
+  if (servico.texto) description.style.color = servico.texto;
+
+  const priceRow = document.createElement("div");
+  priceRow.className = "price-row";
+
+  const price = document.createElement("div");
+  price.className = "price";
+  price.textContent = servico.valor;
+
+  const priceNote = document.createElement("span");
+  priceNote.className = "price-note";
+  priceNote.textContent = "Valor do serviço";
+
+  const button = document.createElement("a");
+  button.className = "whatsapp";
+  button.href = link;
+  button.target = "_blank";
+  button.rel = "noopener noreferrer";
+  button.setAttribute(
+    "aria-label",
+    "Consultar " + servico.nome + " pelo WhatsApp. Valor: " + servico.valor
+  );
+  button.innerHTML = whatsappIcon + "<span>Consultar pelo WhatsApp</span>";
+
+  priceRow.append(price, priceNote);
+  inner.append(number, title, label, description, priceRow, button);
+  article.appendChild(inner);
+
+  return article;
+}
+
+servicos.forEach(function(servico, indice) {
+  cards.appendChild(criarCard(servico, indice));
+});
+</script>
+</body>
+</html>
