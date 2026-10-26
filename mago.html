@@ -4,18 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100719">
-<meta name="description" content="Portal do Mago Orion - consultas espirituais, Tarot, Umbanda, Quimbanda e Bruxaria Natural.">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Portal do Mago Orion: consultas espirituais, Tarot, Umbanda, Quimbanda e Bruxaria Natural.">
+
 <title>Portal do Mago Orion | Consultas Espirituais</title>
 
 <style>
 :root {
-    --fundo: #100719;
-    --fundo-escuro: #0a0410;
-    --roxo: #21102f;
+    --fundo: #000000;
+    --fundo-escuro: #000000;
     --dourado: #ffd447;
     --dourado-claro: #fff0a6;
-    --texto: #f8edff;
     --amarelo: #ffd447;
     --borda: rgba(255,212,71,.4);
 }
@@ -28,13 +27,12 @@
 
 html {
     scroll-behavior: smooth;
+    background: #000000;
 }
 
 body {
-    background:
-        radial-gradient(ellipse at top right, #321442, transparent 42%),
-        var(--fundo);
-    color: var(--texto);
+    background: #000000;
+    color: var(--dourado);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     min-width: 280px;
@@ -49,7 +47,7 @@ img {
 header {
     padding: 20px 12px;
     text-align: center;
-    background: var(--fundo-escuro);
+    background: #000000;
     border-bottom: 1px solid var(--borda);
 }
 
@@ -60,10 +58,9 @@ header {
     letter-spacing: 3px;
     text-transform: uppercase;
     text-decoration: none;
-    text-shadow: 0 0 22px rgba(255,212,71,.2);
 }
 
-/* APRESENTAÇÃO PRINCIPAL */
+/* APRESENTAÇÃO */
 
 .principal {
     width: 100%;
@@ -90,7 +87,6 @@ header {
     font-weight: 900;
     line-height: 1.08;
     letter-spacing: 1px;
-    text-shadow: 0 0 18px rgba(255,212,71,.15), 0 3px 0 #6e4300;
 }
 
 .linha-dourada {
@@ -101,7 +97,7 @@ header {
     background: linear-gradient(90deg, #b47a12, #fff0a6, #d79b18);
 }
 
-/* FOTO DO MAGO SEM MOLDURA */
+/* FOTO DO MAGO */
 
 .foto-mago {
     display: block;
@@ -124,10 +120,9 @@ header {
     margin: 0 auto;
     padding: 25px 22px;
     text-align: center;
-    border: 1px solid rgba(255,212,71,.6);
+    border: 1px solid var(--borda);
     border-radius: 18px;
-    background: linear-gradient(145deg, #261133, #110719);
-    box-shadow: 0 15px 35px rgba(0,0,0,.3);
+    background: #000000;
 }
 
 .consulta-card h2 {
@@ -155,10 +150,10 @@ header {
 
 .preco small {
     font-size: 15px;
-    color: #e0d3e8;
+    color: var(--dourado-claro);
 }
 
-/* INDICADOR AMARELO PISCANDO */
+/* STATUS DISPONÍVEL */
 
 .status-linha {
     display: flex;
@@ -196,9 +191,10 @@ header {
     }
 }
 
-/* BOTÃO DE CONSULTA */
+/* BOTÕES AMARELOS */
 
-.botao {
+.botao,
+.botao-servico {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,18 +204,18 @@ header {
     border: 1px solid #ffe789;
     border-radius: 10px;
     background: linear-gradient(135deg, #ffe789, #e5a91b);
-    color: #1a0b20;
+    color: #000000;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: .5px;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 5px 18px rgba(229,169,27,.15);
     transition: filter .2s, transform .2s;
 }
 
-.botao:hover {
+.botao:hover,
+.botao-servico:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
 }
@@ -231,6 +227,7 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 35px 25px 65px;
+    background: #000000;
 }
 
 .cabecalho-servicos {
@@ -250,11 +247,11 @@ header {
 
 .cabecalho-servicos p:last-child {
     margin-top: 10px;
-    color: #d9cce3;
+    color: var(--dourado-claro);
     font-size: 16px;
 }
 
-/* CARDS SEM MOLDURA NAS IMAGENS */
+/* IMAGENS SEM MOLDURA */
 
 .grade-banners {
     display: grid;
@@ -267,6 +264,7 @@ header {
     min-width: 0;
     width: 100%;
     text-align: center;
+    background: #000000;
 }
 
 .imagem-servico {
@@ -275,7 +273,7 @@ header {
     text-decoration: none;
     overflow: hidden;
     border: none;
-    background: transparent;
+    background: #000000;
 }
 
 .imagem-servico img {
@@ -296,28 +294,8 @@ header {
 }
 
 .botao-servico {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 49px;
     margin-top: 14px;
-    padding: 12px 15px;
-    background: linear-gradient(135deg, #ffe789, #e5a91b);
-    color: #1a0b20;
-    border: 1px solid #ffe789;
-    border-radius: 9px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: 900;
-    font-size: 15px;
-    letter-spacing: .8px;
-    transition: filter .2s, transform .2s;
-}
-
-.botao-servico:hover {
-    filter: brightness(1.12);
-    transform: translateY(-2px);
+    min-height: 49px;
 }
 
 /* BIOGRAFIA */
@@ -329,7 +307,7 @@ header {
     text-align: center;
     border-top: 1px solid var(--borda);
     border-bottom: 1px solid var(--borda);
-    background: linear-gradient(145deg, rgba(38,17,51,.7), rgba(16,7,25,.5));
+    background: #000000;
 }
 
 .biografia .subtitulo {
@@ -346,7 +324,7 @@ header {
 .biografia p {
     max-width: 780px;
     margin: 0 auto 15px;
-    color: #e6dbea;
+    color: var(--dourado-claro);
     font-size: 16px;
     line-height: 1.9;
 }
@@ -355,12 +333,14 @@ header {
     margin-bottom: 0;
 }
 
+/* RODAPÉ */
+
 footer {
     padding: 25px 15px;
     text-align: center;
-    color: #c7b7d3;
+    color: var(--dourado-claro);
     font-size: 14px;
-    background: var(--fundo-escuro);
+    background: #000000;
     border-top: 1px solid var(--borda);
 }
 
@@ -381,7 +361,7 @@ footer strong {
     }
 }
 
-/* CELULARES: UMA IMAGEM POR LINHA */
+/* CELULARES */
 
 @media (max-width: 768px) {
     header {
@@ -462,8 +442,6 @@ footer strong {
     }
 }
 
-/* CELULARES ESTREITOS */
-
 @media (max-width: 380px) {
     .logo {
         font-size: 21px;
@@ -503,14 +481,14 @@ footer strong {
     }
 }
 
-/* ACESSIBILIDADE */
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
     }
 
@@ -531,7 +509,6 @@ footer strong {
 
 <main>
 
-    <!-- APRESENTAÇÃO: ORDEM SOLICITADA -->
     <section class="principal">
 
         <p class="subtitulo">Atendimento espiritual online</p>
@@ -542,14 +519,13 @@ footer strong {
 
         <div class="linha-dourada"></div>
 
-        <!-- IMAGEM DO MAGO -->
+        <!-- FOTO DO MAGO -->
         <img
             class="foto-mago"
             src="./Mago%20Cerimonial%20com%20Cajado%20Dourado.png"
             alt="Mago Orion, com cajado dourado"
             fetchpriority="high">
 
-        <!-- CONSULTA E VALOR -->
         <div class="consulta-card">
 
             <h2>Consulte agora pelo chat</h2>
@@ -564,12 +540,11 @@ footer strong {
                 <span>DISPONÍVEL</span>
             </div>
 
+            <!-- BOTÃO DIRETO PARA PACOTE.HTML -->
             <a
                 id="botao-consultar"
                 class="botao"
-                href="#"
-                target="_blank"
-                rel="noopener">
+                href="https://onlinecartomantes-dotcom.github.io/portaldomago/pacote.html">
                 CONSULTAR AGORA
             </a>
 
@@ -577,7 +552,6 @@ footer strong {
 
     </section>
 
-    <!-- NOSSOS SERVIÇOS -->
     <section class="servicos" id="servicos">
 
         <div class="cabecalho-servicos">
@@ -588,135 +562,93 @@ footer strong {
 
         <div class="grade-banners">
 
-            <!-- 1. SÃO MIGUEL ARCANJO -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/anjos.html"
-                    aria-label="Conhecer São Miguel Arcanjo Contra as Trevas">
-                    <img
-                        src="./S%C3%A3o%20Miguel%20Arcanjo%20Contra%20as%20Trevas.png"
-                        alt="São Miguel Arcanjo Contra as Trevas"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/anjos.html">
+                    <img src="./S%C3%A3o%20Miguel%20Arcanjo%20Contra%20as%20Trevas.png"
+                         alt="São Miguel Arcanjo Contra as Trevas"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/anjos.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/anjos.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 2. GOETIA E DEMONATRIA -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/goetia.html"
-                    aria-label="Conhecer Goetia e Demonatria">
-                    <img
-                        src="./Goetia%20e%20Demonatria_%20Trono%20Infernal.png"
-                        alt="Goetia e Demonatria: Trono Infernal"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/goetia.html">
+                    <img src="./Goetia%20e%20Demonatria_%20Trono%20Infernal.png"
+                         alt="Goetia e Demonatria: Trono Infernal"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/goetia.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/goetia.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 3. QUIMBANDA -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/quimbanda.html"
-                    aria-label="Conhecer Quimbanda">
-                    <img
-                        src="./Quimbanda_%20Trono%20de%20Fogo%20e%20Sombras.png"
-                        alt="Quimbanda: Trono de Fogo e Sombras"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/quimbanda.html">
+                    <img src="./Quimbanda_%20Trono%20de%20Fogo%20e%20Sombras.png"
+                         alt="Quimbanda: Trono de Fogo e Sombras"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/quimbanda.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/quimbanda.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 4. BRUXARIA NATURAL -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/bruxaria.html"
-                    aria-label="Conhecer Bruxaria Natural">
-                    <img
-                        src="./Bruxaria%20na%20Floresta%20Encantada.png"
-                        alt="Bruxaria na Floresta Encantada"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/bruxaria.html">
+                    <img src="./Bruxaria%20na%20Floresta%20Encantada.png"
+                         alt="Bruxaria na Floresta Encantada"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/bruxaria.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/bruxaria.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 5. TAROT E ORÁCULOS -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/taro.html"
-                    aria-label="Conhecer Tarot e Oráculos">
-                    <img
-                        src="./Tarot%20e%20Or%C3%A1culos%20sob%20a%20Lua.png"
-                        alt="Tarot e Oráculos sob a Lua"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/taro.html">
+                    <img src="./Tarot%20e%20Or%C3%A1culos%20sob%20a%20Lua.png"
+                         alt="Tarot e Oráculos sob a Lua"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/taro.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/taro.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 6. UMBANDA E OFERENDAS -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/umbanda.html"
-                    aria-label="Conhecer Umbanda e Oferendas">
-                    <img
-                        src="./Altar%20de%20Umbanda%20sob%20a%20Lua%20Dourada.png"
-                        alt="Altar de Umbanda sob a Lua Dourada"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/umbanda.html">
+                    <img src="./Altar%20de%20Umbanda%20sob%20a%20Lua%20Dourada.png"
+                         alt="Altar de Umbanda sob a Lua Dourada"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/umbanda.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/umbanda.html">
                     SERVIÇOS
                 </a>
             </article>
 
-            <!-- 7. TALISMÃS E AMULETOS -->
             <article class="servico-card">
-                <a
-                    class="imagem-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/amuletos.html"
-                    aria-label="Conhecer Talismãs e Amuletos">
-                    <img
-                        src="./Altar%20M%C3%ADstico%20de%20Talism%C3%A3s%20e%20Amuletos.png"
-                        alt="Altar Místico de Talismãs e Amuletos"
-                        loading="lazy">
+                <a class="imagem-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/amuletos.html">
+                    <img src="./Altar%20M%C3%ADstico%20de%20Talism%C3%A3s%20e%20Amuletos.png"
+                         alt="Altar Místico de Talismãs e Amuletos"
+                         loading="lazy">
                 </a>
-
-                <a
-                    class="botao-servico"
-                    href="https://onlinecartomantes-dotcom.github.io/portaldomago/amuletos.html">
+                <a class="botao-servico"
+                   href="https://onlinecartomantes-dotcom.github.io/portaldomago/amuletos.html">
                     SERVIÇOS
                 </a>
             </article>
@@ -724,7 +656,6 @@ footer strong {
         </div>
     </section>
 
-    <!-- BIOGRAFIA -->
     <section class="biografia" id="sobre">
 
         <p class="subtitulo">Espiritualidade • Sabedoria • Orientação</p>
@@ -761,28 +692,6 @@ footer strong {
     <strong>PORTAL DO MAGO ORION</strong>
     <p>Todos os direitos reservados.</p>
 </footer>
-
-<script>
-/*
-  O indicador fica sempre em DISPONÍVEL.
-  O botão visual permanece ativo.
-  Configure CHAT_URL com o endereço real do atendimento.
-*/
-
-const CHAT_URL = ""; // COLOQUE AQUI O LINK REAL DO CHAT
-
-const botaoConsultar = document.getElementById("botao-consultar");
-
-botaoConsultar.addEventListener("click", function(event) {
-    if (!CHAT_URL.trim()) {
-        event.preventDefault();
-        alert("O link do chat ainda precisa ser configurado.");
-        return;
-    }
-
-    botaoConsultar.href = CHAT_URL.trim();
-});
-</script>
 
 </body>
 </html>
