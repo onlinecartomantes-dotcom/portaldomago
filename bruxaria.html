@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10120b">
+<meta name="description" content="Bruxaria Natural: rituais e banhos a distância e presenciais.">
+<title>Bruxaria Natural</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #10120b;
+  --green: #91a85a;
+  --bright: #b9d47a;
+  --gold: #d7bd7a;
+  --text: #f5f1e6;
+  --muted: #c3c5b5;
+  --border: #414b2d;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top, rgba(78,95,43,.22), transparent 52%),
+    var(--bg);
+  font-family: "Manrope", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.hero {
+  background: #0a0c07;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-image {
+  width: 100%;
+  height: clamp(250px, 49vw, 630px);
+  overflow: hidden;
+  background: #10120b;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+}
+
+.hero-heading {
+  padding: 26px 18px 34px;
+  text-align: center;
+  background: linear-gradient(180deg, #151a0e, #10120b);
+}
+
+.eyebrow {
+  color: var(--bright);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+h1, h2, h3 {
+  font-family: "Cinzel", Georgia, serif;
+}
+
+h1 {
+  margin: 7px 0 0;
+  font-size: clamp(2rem, 5.5vw, 4.2rem);
+  line-height: 1.13;
+  color: var(--gold);
+}
+
+.ornament {
+  width: min(220px, 60%);
+  height: 2px;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg, transparent, var(--green), var(--gold), var(--green), transparent);
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  padding: 45px 0 20px;
+}
+
+.intro h2 {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  margin: 8px 0 10px;
+}
+
+.intro p {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 36px 0 18px;
+  color: var(--gold);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-note {
+  margin: -8px 0 20px;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(150deg, rgba(37,46,27,.96), rgba(20,25,15,.98));
+  box-shadow: 0 16px 42px rgba(0,0,0,.28);
+  transition: transform .22s ease, border-color .22s ease;
+}
+
+.service:hover {
+  transform: translateY(-3px);
+  border-color: #849b4d;
+}
+
+.service-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mode {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 99px;
+  color: var(--bright);
+  background: rgba(145,168,90,.12);
+  border: 1px solid rgba(145,168,90,.28);
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.service h3 {
+  margin: 17px 0 9px;
+  font-size: 1.23rem;
+  line-height: 1.4;
+}
+
+.service.no-badge h3 {
+  margin-top: 0;
+}
+
+.service p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .93rem;
+}
+
+.includes {
+  margin: 16px 0 20px;
+  padding-left: 19px;
+  color: #e4e6d8;
+  font-size: .88rem;
+}
+
+.includes li { margin: 6px 0; }
+
+.price-area {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.price-caption {
+  color: var(--muted);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.price {
+  margin: 3px 0 16px;
+  color: var(--gold);
+  font-size: clamp(1.55rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+}
+
+.whatsapp {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #4da66f;
+  background: linear-gradient(135deg, #1c7544, #238b52);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: .82rem;
+  font-weight: 800;
+  line-height: 1.4;
+  transition: filter .2s ease, transform .2s ease;
+}
+
+.whatsapp:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+.whatsapp:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .service { padding: 20px; }
+}
+
+@media (max-width: 620px) {
+  .hero-image { height: 310px; }
+
+  .hero-heading { padding: 22px 14px 28px; }
+
+  .container { width: min(100% - 28px, 520px); }
+
+  .intro { padding-top: 34px; }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service { padding: 21px; }
+
+  .section-title { margin-top: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-image">
+    <img
+      src="https://i.ibb.co/1GHmW9jd/Feiticeiro-no-Altar-Luz-da-Lua.png"
+      alt="Feiticeiro em um altar à luz da lua"
+      fetchpriority="high">
+  </div>
+
+  <div class="hero-heading">
+    <span class="eyebrow">Ervas · Natureza · Tradição</span>
+    <h1>Bruxaria Natural</h1>
+    <div class="ornament"></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <span class="eyebrow">Escolha sua modalidade</span>
+    <h2>Rituais e Orientações</h2>
+    <p>
+      Práticas de bruxaria natural inspiradas nas ervas e nos ciclos lunares.
+      Escolha entre rituais e banhos a distância ou atendimentos presenciais.
+    </p>
+  </section>
+
+  <!-- RITUAIS A DISTÂNCIA PRIMEIRO -->
+  <section id="rituais-distancia-secao">
+    <h2 class="section-title">Rituais completos a distância</h2>
+    <p class="section-note">
+      Rituais simbólicos com ervas e planejamento conforme os ciclos lunares.
+    </p>
+    <div class="grid" id="rituais-distancia"></div>
+  </section>
+
+  <!-- BANHOS E ORIENTAÇÕES A DISTÂNCIA -->
+  <section id="banhos-distancia-secao">
+    <h2 class="section-title">Banhos e orientações a distância</h2>
+    <p class="section-note">
+      Orientações sobre ervas e preparo de banhos para práticas em casa.
+    </p>
+    <div class="grid" id="servicos-distancia"></div>
+  </section>
+
+  <!-- RITUAIS PRESENCIAIS -->
+  <section id="rituais-presenciais">
+    <h2 class="section-title">Rituais completos presenciais</h2>
+    <p class="section-note">
+      Rituais com ervas e práticas da bruxaria natural, mediante agendamento.
+    </p>
+    <div class="grid" id="grade-rituais-presenciais"></div>
+  </section>
+
+  <!-- BANHOS PRESENCIAIS -->
+  <section id="banhos-presenciais">
+    <h2 class="section-title">Banhos presenciais</h2>
+    <p class="section-note">
+      Banhos físicos de descarrego, amor, proteção e limpeza, mediante agendamento.
+    </p>
+    <div class="grid" id="servicos-presenciais"></div>
+  </section>
+
+</main>
+
+<script>
+/* WhatsApp corrigido: código do Brasil + DDD 85 + número informado */
+const WHATSAPP = "5585986966786";
+
+/* ORIENTAÇÕES A DISTÂNCIA */
+const servicosDistancia = [
+  {
+    nome: "Orientação de Ervas e Banhos",
+    valor: 107,
+    descricao: "Orientação a distância sobre ervas tradicionalmente utilizadas na bruxaria natural e preparo de banhos em casa.",
+    inclui: [
+      "Sugestões de ervas e preparo",
+      "Orientações gerais de segurança",
+      "Instruções para prática em casa"
+    ]
+  }
+];
+
+/* RITUAIS COMPLETOS */
+const rituaisCompletos = [
+  {
+    nome: "Ritual Natural para Amor e Harmonia",
+    valorPresencial: 487,
+    valorDistancia: 387,
+    descricao: "Prática simbólica inspirada nas ervas e nos ciclos lunares, voltada ao amor-próprio, à harmonia afetiva e à abertura para relações respeitosas.",
+    inclui: [
+      "Orientação sobre ervas associadas à intenção",
+      "Planejamento considerando os ciclos lunares",
+      "Passo a passo conforme a modalidade escolhida"
+    ]
+  },
+  {
+    nome: "Ritual Natural para Dinheiro e Prosperidade",
+    valorPresencial: 487,
+    valorDistancia: 367,
+    descricao: "Ritual simbólico inspirado em ervas e ciclos lunares, associado à intenção de prosperidade e à reflexão sobre oportunidades concretas.",
+    inclui: [
+      "Sugestões de ervas e elementos naturais",
+      "Orientações sobre fases lunares e horários",
+      "Prática simbólica e definição de intenções"
+    ]
+  },
+  {
+    nome: "Quebra de Magia",
+    valorPresencial: 487,
+    valorDistancia: 357,
+    descricao: "Ritual simbólico de bruxaria natural com ervas e planejamento conforme os ciclos lunares, voltado à renovação espiritual e à firmeza pessoal. Não promete resultados garantidos.",
+    inclui: [
+      "Orientação sobre ervas e materiais",
+      "Planejamento conforme os ciclos lunares",
+      "Instruções para a modalidade escolhida"
+    ]
+  },
+  {
+    nome: "Ritual Natural de Abertura de Caminhos",
+    valorPresencial: 487,
+    valorDistancia: 337,
+    descricao: "Prática simbólica com elementos naturais para marcar novos começos, organizar intenções e refletir sobre oportunidades.",
+    inclui: [
+      "Sugestões de ervas e elementos naturais",
+      "Orientações sobre ciclos lunares",
+      "Passo a passo adaptado à modalidade"
+    ]
+  }
+];
+
+/* BANHOS PRESENCIAIS */
+const servicosPresenciais = [
+  {
+    nome: "Banho de Descarrego",
+    valor: 150,
+    descricao: "Banho físico presencial com ervas, associado simbolicamente à renovação pessoal e ao encerramento de ciclos.",
+    inclui: [
+      "Banho ritualístico presencial",
+      "Orientações gerais sobre ervas",
+      "Agendamento individual"
+    ]
+  },
+  {
+    nome: "Banho para Amor",
+    valor: 150,
+    descricao: "Banho presencial inspirado no amor-próprio, na autoestima e na intenção de cultivar relações respeitosas.",
+    inclui: [
+      "Preparação presencial do banho",
+      "Orientação sobre os ingredientes",
+      "Sugestões de autocuidado"
+    ]
+  },
+  {
+    nome: "Banho de Proteção",
+    valor: 150,
+    descricao: "Banho físico presencial como prática simbólica de cuidado pessoal, firmeza de intenção e tranquilidade.",
+    inclui: [
+      "Banho ritualístico presencial",
+      "Orientações gerais sobre as ervas",
+      "Agendamento individual"
+    ]
+  },
+  {
+    nome: "Banho de Limpeza",
+    valor: 150,
+    descricao: "Banho presencial com ervas para uma prática simbólica de limpeza, renovação e conexão com a natureza.",
+    inclui: [
+      "Banho físico realizado presencialmente",
+      "Informações sobre os ingredientes",
+      "Orientações gerais de cuidado"
+    ]
+  }
+];
+
+function formatarValor(valor) {
+  return valor.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+}
+
+/*
+  A mensagem que abre no WhatsApp já começa com o nome
+  do serviço e o valor, para facilitar o atendimento.
+*/
+function montarMensagem(servico, modalidade) {
+  return [
+    "Olá! Tenho interesse neste serviço:",
+    "",
+    "SERVIÇO: " + servico.nome,
+    "VALOR: " + formatarValor(servico.valor),
+    "MODALIDADE: " + modalidade,
+    "",
+    "Descrição: " + servico.descricao,
+    "",
+    "Inclui:",
+    ...servico.inclui.map(item => "- " + item),
+    "",
+    "Gostaria de confirmar a disponibilidade e agendar."
+  ].join("\n");
+}
+
+function criarCard(servico, modalidade, mostrarSelo = true) {
+  const card = document.createElement("article");
+  card.className = "service";
+
+  if (!mostrarSelo) {
+    card.classList.add("no-badge");
+  }
+
+  const topo = document.createElement("div");
+  topo.className = "service-top";
+
+  if (mostrarSelo) {
+    const selo = document.createElement("span");
+    selo.className = "mode";
+    selo.textContent = modalidade;
+    topo.appendChild(selo);
+  }
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = servico.nome;
+
+  const descricao = document.createElement("p");
+  descricao.textContent = servico.descricao;
+
+  const lista = document.createElement("ul");
+  lista.className = "includes";
+
+  servico.inclui.forEach(texto => {
+    const item = document.createElement("li");
+    item.textContent = texto;
+    lista.appendChild(item);
+  });
+
+  const areaPreco = document.createElement("div");
+  areaPreco.className = "price-area";
+
+  const legenda = document.createElement("div");
+  legenda.className = "price-caption";
+  legenda.textContent = "Valor do serviço";
+
+  const preco = document.createElement("div");
+  preco.className = "price";
+  preco.textContent = formatarValor(servico.valor);
+
+  const botao = document.createElement("a");
+  botao.className = "whatsapp";
+  botao.href =
+    "https://wa.me/" + WHATSAPP +
+    "?text=" + encodeURIComponent(
+      montarMensagem(servico, modalidade)
+    );
+
+  botao.target = "_blank";
+  botao.rel = "noopener noreferrer";
+  botao.textContent = "Consultar pelo WhatsApp";
+
+  areaPreco.append(legenda, preco, botao);
+  card.append(topo, titulo, descricao, lista, areaPreco);
+
+  return card;
+}
+
+/* 1. RITUAIS COMPLETOS A DISTÂNCIA */
+rituaisCompletos.forEach(ritual => {
+  const servico = {
+    nome: ritual.nome,
+    valor: ritual.valorDistancia,
+    descricao: ritual.descricao,
+    inclui: ritual.inclui
+  };
+
+  document.getElementById("rituais-distancia")
+    .appendChild(criarCard(servico, "A DISTÂNCIA"));
+});
+
+/* 2. BANHOS E ORIENTAÇÕES A DISTÂNCIA */
+servicosDistancia.forEach(servico => {
+  document.getElementById("servicos-distancia")
+    .appendChild(criarCard(servico, "A DISTÂNCIA"));
+});
+
+/* 3. RITUAIS COMPLETOS PRESENCIAIS */
+rituaisCompletos.forEach(ritual => {
+  const servico = {
+    nome: ritual.nome,
+    valor: ritual.valorPresencial,
+    descricao: ritual.descricao,
+    inclui: ritual.inclui
+  };
+
+  document.getElementById("grade-rituais-presenciais")
+    .appendChild(criarCard(servico, "PRESENCIAL"));
+});
+
+/* 4. BANHOS PRESENCIAIS SEM ETIQUETA NO CARD */
+servicosPresenciais.forEach(servico => {
+  document.getElementById("servicos-presenciais")
+    .appendChild(criarCard(servico, "PRESENCIAL", false));
+});
+</script>
+
+</body>
+</html>
