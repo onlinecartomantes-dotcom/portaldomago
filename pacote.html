@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#000000">
+
+<title>Pagamento | Mago Orion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --preto: #000000;
+    --preto-card: #090909;
+    --amarelo: #ffd447;
+    --amarelo-claro: #ffe789;
+    --amarelo-escuro: #b8860b;
+}
+
+html {
+    min-height: 100%;
+    background: var(--preto);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--preto);
+    color: var(--amarelo);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 460px;
+    padding: 20px 16px;
+    animation: fadeIn .5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box {
+    background: var(--preto-card);
+    border: 1px solid var(--amarelo-escuro);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(255,212,71,.08);
+}
+
+/* IMAGEM DO MAGO NO GITHUB */
+
+.topo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+/* NOME */
+
+.nome-consultor {
+    color: var(--amarelo);
+    text-align: center;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 8px 0;
+    line-height: 1.3;
+}
+
+.subtitulo {
+    color: var(--amarelo-claro);
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0 0 22px;
+}
+
+/* CONTADOR */
+
+.urgencia {
+    text-align: center;
+    font-weight: 700;
+    margin: 18px 0 22px;
+    color: var(--amarelo);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.urgencia span {
+    font-size: 30px;
+    display: block;
+    margin-top: 5px;
+    color: var(--amarelo-claro);
+}
+
+/* BOLINHA AMARELA PISCANDO */
+
+.status-linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin: 12px 0 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.status-bola {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 12px;
+    border-radius: 50%;
+    background: var(--amarelo);
+    box-shadow: 0 0 12px rgba(255,212,71,.8);
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 12px rgba(255,212,71,.8);
+    }
+    50% {
+        opacity: .3;
+        box-shadow: 0 0 3px rgba(255,212,71,.3);
+    }
+}
+
+/* OPÇÕES DE TEMPO */
+
+#opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background: #050505;
+    border: 1px solid var(--amarelo-escuro);
+    color: var(--amarelo);
+    padding: 17px 15px;
+    border-radius: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background .2s, border-color .2s;
+}
+
+.option:focus-visible {
+    outline: 2px solid var(--amarelo-claro);
+    outline-offset: 3px;
+}
+
+.option.selected {
+    background: var(--amarelo);
+    border-color: var(--amarelo-claro);
+    color: #000000;
+}
+
+.option .tempo {
+    font-size: 14px;
+}
+
+.option .valor {
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* BOTÃO AMARELO */
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 18px;
+    border: 1px solid var(--amarelo-claro);
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--amarelo-claro), var(--amarelo));
+    color: #000000;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter .2s, transform .2s;
+}
+
+.btn:hover:not(:disabled) {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* AVISO APÓS PAGAMENTO */
+
+.aviso {
+    margin-top: 15px;
+    background: #080808;
+    border: 1px solid var(--amarelo-escuro);
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--amarelo-claro);
+    line-height: 1.8;
+}
+
+.rodape {
+    text-align: center;
+    color: var(--amarelo);
+    font-size: 11px;
+    margin-top: 18px;
+    opacity: .85;
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding: 12px;
+    }
+
+    .box {
+        padding: 16px;
+    }
+
+    .nome-consultor {
+        font-size: 24px;
+    }
+
+    .option {
+        padding: 15px 12px;
+    }
+
+    .option .tempo {
+        font-size: 13px;
+    }
+
+    .option .valor {
+        font-size: 14px;
+    }
+
+    .aviso {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box">
+
+        <!-- IMAGEM MAGO.PNG DO GITHUB -->
+        <img
+            class="topo-img"
+            src="./mago.png"
+            alt="Mago Orion"
+        >
+
+        <!-- NOME FIXO -->
+        <h1 class="nome-consultor">Mago Orion</h1>
+
+        <p class="subtitulo">CONSULTA ESPIRITUAL ONLINE</p>
+
+        <!-- DISPONIBILIDADE -->
+        <div class="status-linha">
+            <span class="status-bola" aria-hidden="true"></span>
+            <span>DISPONÍVEL</span>
+        </div>
+
+        <!-- CONTADOR DE 10 SEGUNDOS -->
+        <div class="urgencia">
+            Seu consultor está disponível agora.
+            <br>
+            Pode sair em:
+            <span id="contador" aria-live="off">10</span>
+        </div>
+
+        <!-- OPÇÕES DE CONSULTA -->
+        <div id="opcoes"></div>
+
+        <!-- BOTÃO -->
+        <button id="btn" class="btn" type="button" disabled>
+            Escolha o tempo da consulta
+        </button>
+
+        <!-- AVISO SOLICITADO -->
+        <div class="aviso">
+            Após o pagamento, aguarde até 10 segundos.
+            Não saia da página. Você será direcionado para o atendimento.
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        PORTAL DO MAGO ORION
+    </div>
+
+</div>
+
+<script>
+/*
+==========================================
+CONFIGURAÇÃO FIXA
+==========================================
+*/
+
+const NOME_CONSULTOR = "Mago Orion";
+const VALOR_POR_MINUTO = 3.99;
+
+const URL_AGUARDE =
+    "https://onlinecartomantes-dotcom.github.io/aplicativo/aguarde.html";
+
+/*
+==========================================
+CONTADOR DE 10 SEGUNDOS
+==========================================
+*/
+
+const contadorEl = document.getElementById("contador");
+
+let tempo = 10;
+
+const contadorIntervalo = setInterval(() => {
+    tempo = Math.max(0, tempo - 1);
+    contadorEl.textContent = tempo;
+
+    if (tempo <= 0) {
+        clearInterval(contadorIntervalo);
+    }
+}, 1000);
+
+/*
+==========================================
+OPÇÕES DE TEMPO E VALORES
+==========================================
+*/
+
+const minutosDisponiveis = [5, 10, 20, 30];
+
+let precoFinal = null;
+let minutosSelecionados = null;
+
+const opcoes = document.getElementById("opcoes");
+const btn = document.getElementById("btn");
+
+function formatarMoeda(valor) {
+    return valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
+minutosDisponiveis.forEach(minutos => {
+
+    const preco = Math.round(
+        minutos * VALOR_POR_MINUTO * 100
+    ) / 100;
+
+    const div = document.createElement("div");
+
+    div.className = "option";
+    div.setAttribute("role", "button");
+    div.setAttribute("tabindex", "0");
+    div.setAttribute("aria-pressed", "false");
+
+    const textoTempo = document.createElement("span");
+    textoTempo.className = "tempo";
+    textoTempo.textContent = minutos + " minutos";
+
+    const textoValor = document.createElement("span");
+    textoValor.className = "valor";
+    textoValor.textContent = formatarMoeda(preco);
+
+    div.appendChild(textoTempo);
+    div.appendChild(textoValor);
+
+    function selecionarOpcao() {
+
+        document.querySelectorAll(".option").forEach(opcao => {
+            opcao.classList.remove("selected");
+            opcao.setAttribute("aria-pressed", "false");
+        });
+
+        div.classList.add("selected");
+        div.setAttribute("aria-pressed", "true");
+
+        precoFinal = preco;
+        minutosSelecionados = minutos;
+
+        btn.disabled = false;
+        btn.textContent =
+            "Continuar — " + formatarMoeda(precoFinal);
+    }
+
+    div.addEventListener("click", selecionarOpcao);
+
+    div.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selecionarOpcao();
+        }
+    });
+
+    opcoes.appendChild(div);
+});
+
+/*
+==========================================
+CONTINUAR PARA A PRÓXIMA ETAPA
+==========================================
+*/
+
+btn.addEventListener("click", () => {
+
+    if (
+        precoFinal === null ||
+        minutosSelecionados === null
+    ) {
+        alert("Selecione o tempo da consulta.");
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Processando...";
+
+    const parametros = new URLSearchParams({
+        nome: NOME_CONSULTOR,
+        valor: precoFinal.toFixed(2),
+        descricao:
+            "Consulta com " + NOME_CONSULTOR +
+            " - " + minutosSelecionados + " minutos",
+        minutos: String(minutosSelecionados)
+    });
+
+    const destino =
+        URL_AGUARDE + "?" + parametros.toString();
+
+    window.location.href = destino;
+});
+</script>
+
+</body>
+</html>
