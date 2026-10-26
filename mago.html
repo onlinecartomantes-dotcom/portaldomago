@@ -25,21 +25,15 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    background:
-        radial-gradient(ellipse at top right, #321442, transparent 42%),
-        var(--fundo);
+    background: radial-gradient(ellipse at top right, #321442, transparent 42%), var(--fundo);
     color: var(--texto);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     min-width: 280px;
 }
-
-/* CABEÇALHO CENTRALIZADO */
 
 header {
     padding: 22px 15px;
@@ -58,8 +52,6 @@ header {
     text-decoration: none;
     text-shadow: 0 0 22px rgba(255,212,71,.18);
 }
-
-/* ÁREA PRINCIPAL */
 
 .principal {
     max-width: 1200px;
@@ -91,9 +83,7 @@ header {
     line-height: 1.08;
     letter-spacing: 1px;
     text-align: center;
-    text-shadow:
-        0 0 18px rgba(255,212,71,.15),
-        0 3px 0 #6e4300;
+    text-shadow: 0 0 18px rgba(255,212,71,.15), 0 3px 0 #6e4300;
 }
 
 .linha-dourada {
@@ -104,8 +94,6 @@ header {
     background: linear-gradient(90deg, #b47a12, #fff0a6, #d79b18);
 }
 
-/* CARTÃO DE CONSULTA */
-
 .consulta-card {
     width: 100%;
     max-width: 450px;
@@ -115,9 +103,7 @@ header {
     border: 1px solid rgba(255,212,71,.6);
     border-radius: 18px;
     background: linear-gradient(145deg, #261133, #110719);
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.3),
-        inset 0 0 25px rgba(255,212,71,.025);
+    box-shadow: 0 15px 35px rgba(0,0,0,.3), inset 0 0 25px rgba(255,212,71,.025);
 }
 
 .consulta-card h2 {
@@ -149,8 +135,6 @@ header {
     color: #e0d3e8;
 }
 
-/* STATUS CENTRALIZADO */
-
 .status-linha {
     display: flex;
     justify-content: center;
@@ -173,9 +157,7 @@ header {
 
 .status-bola.online {
     background: var(--verde);
-    box-shadow:
-        0 0 0 4px rgba(53,232,120,.12),
-        0 0 15px rgba(53,232,120,.8);
+    box-shadow: 0 0 0 4px rgba(53,232,120,.12), 0 0 15px rgba(53,232,120,.8);
     animation: piscar 1.2s infinite;
 }
 
@@ -189,8 +171,6 @@ header {
     0%, 100% { opacity: 1; }
     50% { opacity: .35; }
 }
-
-/* BOTÃO DE CONSULTA */
 
 .botao-consultar {
     display: flex;
@@ -227,8 +207,6 @@ header {
     pointer-events: none;
 }
 
-/* FOTO DO MAGO */
-
 .foto-moldura {
     width: 100%;
     max-width: 440px;
@@ -248,8 +226,6 @@ header {
     object-fit: contain;
     border-radius: 12px;
 }
-
-/* SERVIÇOS */
 
 .servicos {
     max-width: 1200px;
@@ -277,8 +253,6 @@ header {
     color: #d9cce3;
 }
 
-/* BANNERS PADRONIZADOS */
-
 .grade-banners {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -287,13 +261,13 @@ header {
 }
 
 .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 420px;
     min-width: 0;
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(145deg, #261133, #170a20);
     border: 1px solid rgba(255,212,71,.45);
     border-radius: 12px;
@@ -318,8 +292,6 @@ header {
     border-radius: 6px;
 }
 
-/* RODAPÉ */
-
 footer {
     padding: 25px 15px;
     text-align: center;
@@ -329,11 +301,7 @@ footer {
     border-top: 1px solid rgba(255,212,71,.3);
 }
 
-footer strong {
-    color: var(--dourado);
-}
-
-/* TABLETS */
+footer strong { color: var(--dourado); }
 
 @media (min-width: 769px) and (max-width: 1000px) {
     .principal {
@@ -341,9 +309,7 @@ footer strong {
         padding: 45px 20px;
     }
 
-    .banner {
-        height: 360px;
-    }
+    .banner { height: 360px; }
 
     .servicos {
         padding-left: 20px;
@@ -351,12 +317,8 @@ footer strong {
     }
 }
 
-/* CELULARES */
-
 @media (max-width: 768px) {
-    header {
-        padding: 20px 12px;
-    }
+    header { padding: 20px 12px; }
 
     .logo {
         font-size: clamp(23px, 6vw, 32px);
@@ -374,9 +336,7 @@ footer strong {
         margin: auto;
     }
 
-    .titulo-principal {
-        font-size: clamp(42px, 10vw, 64px);
-    }
+    .titulo-principal { font-size: clamp(42px, 10vw, 64px); }
 
     .subtitulo {
         font-size: 11px;
@@ -388,13 +348,9 @@ footer strong {
         margin-top: 22px;
     }
 
-    .foto-moldura {
-        width: min(88%, 360px);
-    }
+    .foto-moldura { width: min(88%, 360px); }
 
-    .servicos {
-        padding: 20px 12px 45px;
-    }
+    .servicos { padding: 20px 12px 45px; }
 
     .grade-banners {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -408,41 +364,25 @@ footer strong {
     }
 }
 
-/* CELULARES ESTREITOS */
-
 @media (max-width: 380px) {
     .logo {
         font-size: 21px;
         letter-spacing: 1px;
     }
 
-    .principal {
-        padding: 30px 12px 35px;
-    }
+    .principal { padding: 30px 12px 35px; }
 
-    .titulo-principal {
-        font-size: 41px;
-    }
+    .titulo-principal { font-size: 41px; }
 
-    .consulta-card {
-        padding: 20px 13px;
-    }
+    .consulta-card { padding: 20px 13px; }
 
-    .consulta-card h2 {
-        font-size: 20px;
-    }
+    .consulta-card h2 { font-size: 20px; }
 
-    .preco strong {
-        font-size: 30px;
-    }
+    .preco strong { font-size: 30px; }
 
-    .preco small {
-        font-size: 13px;
-    }
+    .preco small { font-size: 13px; }
 
-    .grade-banners {
-        gap: 8px;
-    }
+    .grade-banners { gap: 8px; }
 
     .banner {
         height: 255px;
@@ -454,8 +394,6 @@ footer strong {
         padding-right: 9px;
     }
 }
-
-/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -481,10 +419,7 @@ footer strong {
 <section class="principal">
 
     <div class="apresentacao">
-
-        <p class="subtitulo">
-            Atendimento espiritual online
-        </p>
+        <p class="subtitulo">Atendimento espiritual online</p>
 
         <h1 class="titulo-principal">
             CONSULTE<br>O MAGO
@@ -493,7 +428,6 @@ footer strong {
         <div class="linha-dourada"></div>
 
         <div class="consulta-card">
-
             <h2>Consulte agora pelo chat</h2>
 
             <p class="preco">
@@ -502,32 +436,28 @@ footer strong {
             </p>
 
             <div class="status-linha" aria-live="polite">
-                <span
-                    id="status-bola"
-                    class="status-bola ocupado"
-                    aria-hidden="true">
-                </span>
+                <span id="status-bola"
+                      class="status-bola ocupado"
+                      aria-hidden="true"></span>
 
                 <span id="status-texto">OCUPADO</span>
             </div>
 
-            <a
-                id="botao-consultar"
-                class="botao-consultar desativado"
-                href="#"
-                aria-disabled="true"
-                tabindex="-1">
+            <a id="botao-consultar"
+               class="botao-consultar desativado"
+               href="#"
+               aria-disabled="true"
+               tabindex="-1">
                 OCUPADO
             </a>
-
         </div>
     </div>
 
     <div class="foto-moldura">
         <img
             class="foto-mago"
-            src="https://i.ibb.co/wrzFKzPW/Mago-Cerimonial-com-Cajado-Dourado.png"
-            alt="Mago cerimonial com cajado dourado"
+            src="./Mago%20Cerimonial%20com%20Cajado%20Dourado.png"
+            alt="Mago Cerimonial com Cajado Dourado"
             fetchpriority="high">
     </div>
 
@@ -543,59 +473,73 @@ footer strong {
 
     <div class="grade-banners">
 
-        <a class="banner" href="#servicos" aria-label="Angeologia">
+        <!-- 1. ANGEologia / SÃO MIGUEL -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/anjos.html"
+           aria-label="São Miguel Arcanjo Contra as Trevas">
             <img
-                src="https://i.ibb.co/B2zFQrN8/angeologia.jpg"
-                alt="Angeologia"
+                src="./S%C3%A3o%20Miguel%20Arcanjo%20Contra%20as%20Trevas.png"
+                alt="São Miguel Arcanjo Contra as Trevas"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Goetia e Demonologia">
+        <!-- 2. GOETIA E DEMONATRIA -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/goetia.html"
+           aria-label="Goetia e Demonatria: Trono Infernal">
             <img
-                src="https://i.ibb.co/7dVnxgdL/goetia.jpg"
-                alt="Goetia e Demonologia"
+                src="./Goetia%20e%20Demonatria_%20Trono%20Infernal.png"
+                alt="Goetia e Demonatria: Trono Infernal"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Quimbanda">
+        <!-- 3. QUIMBANDA -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/quimbanda.html"
+           aria-label="Quimbanda: Trono de Fogo e Sombras">
             <img
-                src="https://i.ibb.co/GvN7m32J/quimbanda.jpg"
-                alt="Quimbanda"
+                src="./Quimbanda_%20Trono%20de%20Fogo%20e%20Sombras.png"
+                alt="Quimbanda: Trono de Fogo e Sombras"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Bruxaria">
+        <!-- 4. BRUXARIA -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/bruxaria.html"
+           aria-label="Bruxaria na Floresta Encantada">
             <img
-                src="https://i.ibb.co/Kx4kw30B/bruxaria.jpg"
-                alt="Bruxaria"
+                src="./Bruxaria%20na%20Floresta%20Encantada.png"
+                alt="Bruxaria na Floresta Encantada"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Tarot e Oráculos">
+        <!-- 5. TAROT E ORÁCULOS -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/taro.html"
+           aria-label="Tarot e Oráculos sob a Lua">
             <img
-                src="https://i.ibb.co/HfxTxCcr/oraculos.jpg"
-                alt="Tarot e Oráculos"
+                src="./Tarot%20e%20Or%C3%A1culos%20sob%20a%20Lua.png"
+                alt="Tarot e Oráculos sob a Lua"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Talismãs e Amuletos">
+        <!-- 6. UMBANDA E OFERENDAS -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/umbanda.html"
+           aria-label="Altar de Umbanda sob a Lua Dourada">
             <img
-                src="https://i.ibb.co/V0NN8tTg/amuletos.jpg"
-                alt="Talismãs e Amuletos"
+                src="./Altar%20de%20Umbanda%20sob%20a%20Lua%20Dourada.png"
+                alt="Altar de Umbanda sob a Lua Dourada"
                 loading="lazy">
         </a>
 
-        <a class="banner" href="#servicos" aria-label="Umbanda">
+        <!-- 7. TALISMÃS E AMULETOS -->
+        <a class="banner"
+           href="https://onlinecartomantes-dotcom.github.io/portaldomago/amuletos.html"
+           aria-label="Altar Místico de Talismãs e Amuletos">
             <img
-                src="https://i.ibb.co/rRwym7cN/umbanda.jpg"
-                alt="Umbanda"
-                loading="lazy">
-        </a>
-
-        <a class="banner" href="#servicos" aria-label="Magia Popular">
-            <img
-                src="https://i.ibb.co/LhZX249k/magia-popular.jpg"
-                alt="Magia Popular"
+                src="./Altar%20M%C3%ADstico%20de%20Talism%C3%A3s%20e%20Amuletos.png"
+                alt="Altar Místico de Talismãs e Amuletos"
                 loading="lazy">
         </a>
 
@@ -615,11 +559,12 @@ footer strong {
   Todos os dias, das 13h às 22h.
 
   DEMONSTRAÇÃO:
-  Cada ciclo dura 2 minutos:
+  Ciclo de 2 minutos:
   90 segundos disponível e 30 segundos ocupado.
 
-  Para abrir o chat real, informe a URL em CHAT_URL.
-  Para disponibilidade real, conecte a um sistema de atendimento.
+  ATENÇÃO:
+  Configure CHAT_URL com o endereço verdadeiro do seu chat.
+  O status atual é demonstrativo, não verifica a disponibilidade real.
 */
 
 const CHAT_URL = ""; // COLOQUE AQUI O LINK REAL DO CHAT
